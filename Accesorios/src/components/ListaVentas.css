@@ -1,0 +1,257 @@
+/* ============================
+   ListaVentas.css
+   Paleta neutra elegante
+   ============================ */
+
+:root {
+  --color-fondo:        #FAF8F5;
+  --color-superficie:   #FFFFFF;
+  --color-crema:        #F0EBE3;
+  --color-borde:        #E5E0D8;
+  --color-texto:        #2B2B2B;
+  --color-texto-suave:  #6B6B6B;
+  --color-acento:       #A68A64;
+  --color-acento-hover: #8B7355;
+  --color-peligro:      #B85C4A;
+  --color-peligro-hover:#9C4A3A;
+  --color-fila-hover:   #F7F4EF;
+
+  --sombra-suave:       0 2px 8px rgba(0, 0, 0, 0.04);
+  --sombra-media:       0 8px 24px rgba(0, 0, 0, 0.08);
+  --radio:              10px;
+  --transicion:         all 0.25s ease;
+}
+
+/* ============================
+   Contenedor principal
+   ============================ */
+/* Envolvemos h2 + table sin tocar el JSX */
+div:has(> h2 + table) {
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: 16px;
+  box-shadow: var(--sombra-media);
+
+  font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+  color: var(--color-texto);
+}
+
+/* ============================
+   Título
+   ============================ */
+div:has(> h2 + table) h2 {
+  margin: 0 0 1.75rem 0;
+  padding-bottom: 1rem;
+
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-texto);
+
+  border-bottom: 1px solid var(--color-borde);
+  text-align: center;
+}
+
+/* ============================
+   Tabla
+   ============================ */
+table {
+  width: 100%;
+  border-collapse: collapse;      /* elimina el border="1" visualmente */
+  border-spacing: 0;
+
+  background-color: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  overflow: hidden;               /* redondea las esquinas de thead */
+  font-size: 0.92rem;
+}
+
+/* ============================
+   Encabezados
+   ============================ */
+table thead {
+  background-color: var(--color-crema);
+}
+
+table thead th {
+  padding: 1rem 0.9rem;
+
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-texto-suave);
+
+  border-bottom: 1px solid var(--color-borde);
+  white-space: nowrap;
+}
+
+/* Centramos las columnas numéricas */
+table thead th:nth-child(3),
+table thead th:nth-child(4),
+table thead th:nth-child(5) {
+  text-align: center;
+}
+
+/* Centramos la columna de acciones */
+table thead th:last-child {
+  text-align: center;
+}
+
+/* ============================
+   Filas
+   ============================ */
+table tbody tr {
+  border-bottom: 1px solid var(--color-borde);
+  transition: var(--transicion);
+}
+
+table tbody tr:last-child {
+  border-bottom: none;
+}
+
+table tbody tr:hover {
+  background-color: var(--color-fila-hover);
+}
+
+/* ============================
+   Celdas
+   ============================ */
+table tbody td {
+  padding: 1rem 0.9rem;
+  color: var(--color-texto);
+  vertical-align: middle;
+}
+
+/* Cantidad, Precio y Total centrados */
+table tbody td:nth-child(3),
+table tbody td:nth-child(4),
+table tbody td:nth-child(5) {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Columna de Precio: color suave */
+table tbody td:nth-child(4) {
+  color: var(--color-texto-suave);
+}
+
+/* Columna de Total: destacada */
+table tbody td:nth-child(5) {
+  font-weight: 600;
+  color: var(--color-texto);
+}
+
+/* Columna de Acciones: centrada */
+table tbody td:last-child {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* ============================
+   Botones de acciones
+   ============================ */
+table tbody td button {
+  padding: 0.45rem 0.9rem;
+  margin: 0 0.2rem;
+
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transicion);
+}
+
+/* Botón "Editar" */
+table tbody td button:first-child {
+  background-color: transparent;
+  color: var(--color-acento);
+  border-color: var(--color-acento);
+}
+
+table tbody td button:first-child:hover {
+  background-color: var(--color-acento);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* Botón "Eliminar" */
+table tbody td button:last-child {
+  background-color: transparent;
+  color: var(--color-peligro);
+  border-color: var(--color-peligro);
+}
+
+table tbody td button:last-child:hover {
+  background-color: var(--color-peligro);
+  color: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+table tbody td button:active {
+  transform: translateY(0);
+}
+
+table tbody td button:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 768px) {
+  div:has(> h2 + table) {
+    margin: 1rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  div:has(> h2 + table) h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.25rem;
+  }
+
+  table {
+    font-size: 0.82rem;
+  }
+
+  table thead th,
+  table tbody td {
+    padding: 0.7rem 0.55rem;
+  }
+
+  table thead th {
+    font-size: 0.7rem;
+  }
+
+  table tbody td button {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.72rem;
+    margin: 0.15rem 0.1rem;
+  }
+}
+
+/* ============================
+   Scroll horizontal en móviles muy pequeños
+   ============================ */
+@media (max-width: 560px) {
+  div:has(> h2 + table) {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 560px;
+  }
+}
