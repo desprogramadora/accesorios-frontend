@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './EditarVenta.css';
 
 function EditarVenta({ venta, onUpdate }) {
   const [formData, setFormData] = useState({

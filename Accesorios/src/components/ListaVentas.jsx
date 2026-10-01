@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EditarVenta from './EditarVenta';
+import './ListaVentas.css';
 
 function ListaVentas() {
   const [ventas, setVentas] = useState([]);
