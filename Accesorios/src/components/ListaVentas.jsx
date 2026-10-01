@@ -8,7 +8,7 @@ function ListaVentas() {
   const [ventaSeleccionada, setVentaSeleccionada] = useState(null);
 
   const cargarVentas = () => {
-    axios.get('http://localhost:3000/ventas')
+    axios.get('https://accesorios-backend.onrender.com/ventas')
       .then(res => setVentas(res.data))
       .catch(err => console.error('Error al obtener ventas:', err));
   };
@@ -19,7 +19,7 @@ function ListaVentas() {
 
   const eliminarVenta = (id) => {
     if (window.confirm('¿Seguro que deseas eliminar esta venta?')) {
-      axios.delete(`http://localhost:3000/ventas/${id}`)
+      axios.delete(`https://accesorios-backend.onrender.com/ventas/${id}`)
         .then(res => {
           alert(res.data.message);
           cargarVentas();

@@ -14,11 +14,11 @@ function FormularioVenta() {
 
   // Cargar listas de clientes y productos al iniciar
   useEffect(() => {
-    axios.get('http://localhost:3000/clientes')
+    axios.get('https://accesorios-backend.onrender.com/clientes')
       .then(res => setClientes(res.data))
       .catch(err => console.error(err));
 
-    axios.get('http://localhost:3000/productos')
+    axios.get('https://accesorios-backend.onrender.com/productos')
       .then(res => setProductos(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -32,7 +32,7 @@ function FormularioVenta() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3000/ventas', formData)
+    axios.post('https://accesorios-backend.onrender.com/ventas', formData)
       .then(res => {
         alert(res.data.message);
         setFormData({ clientes_id: '', producto_id: '', cantidad: '', fecha: '' });

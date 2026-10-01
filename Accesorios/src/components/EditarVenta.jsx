@@ -13,11 +13,11 @@ function EditarVenta({ venta, onUpdate }) {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/clientes')
+    axios.get('https://accesorios-backend.onrender.com/clientes')
       .then(res => setClientes(res.data))
       .catch(err => console.error(err));
 
-    axios.get('http://localhost:3000/productos')
+    axios.get('https://accesorios-backend.onrender.com/productos')
       .then(res => setProductos(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -31,7 +31,7 @@ function EditarVenta({ venta, onUpdate }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:3000/ventas/${venta.id}`, formData)
+    axios.put(`https://accesorios-backend.onrender.com/ventas/${venta.id}`, formData)
       .then(res => {
         alert(res.data.message);
         onUpdate(); // refresca la lista de ventas
