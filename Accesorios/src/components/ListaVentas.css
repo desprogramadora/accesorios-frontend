@@ -1,6 +1,5 @@
 /* ============================
    ListaVentas.css
-   Paleta neutra elegante
    ============================ */
 
 :root {
@@ -22,11 +21,8 @@
   --transicion:         all 0.25s ease;
 }
 
-/* ============================
-   Contenedor principal
-   ============================ */
-/* Envolvemos h2 + table sin tocar el JSX */
-div:has(> h2 + table) {
+/* Contenedor principal */
+.lista-ventas-container {
   max-width: 1000px;
   margin: 2.5rem auto;
   padding: 2rem;
@@ -40,10 +36,8 @@ div:has(> h2 + table) {
   color: var(--color-texto);
 }
 
-/* ============================
-   Título
-   ============================ */
-div:has(> h2 + table) h2 {
+/* Título */
+.lista-ventas-titulo {
   margin: 0 0 1.75rem 0;
   padding-bottom: 1rem;
 
@@ -57,29 +51,25 @@ div:has(> h2 + table) h2 {
   text-align: center;
 }
 
-/* ============================
-   Tabla
-   ============================ */
-table {
+/* Tabla */
+.lista-ventas-tabla {
   width: 100%;
-  border-collapse: collapse;      /* elimina el border="1" visualmente */
+  border-collapse: collapse;
   border-spacing: 0;
 
   background-color: var(--color-superficie);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);
-  overflow: hidden;               /* redondea las esquinas de thead */
+  overflow: hidden;
   font-size: 0.92rem;
 }
 
-/* ============================
-   Encabezados
-   ============================ */
-table thead {
+/* Encabezados */
+.lista-ventas-tabla thead {
   background-color: var(--color-crema);
 }
 
-table thead th {
+.lista-ventas-tabla thead th {
   padding: 1rem 0.9rem;
 
   text-align: left;
@@ -93,72 +83,60 @@ table thead th {
   white-space: nowrap;
 }
 
-/* Centramos las columnas numéricas */
-table thead th:nth-child(3),
-table thead th:nth-child(4),
-table thead th:nth-child(5) {
+.lista-ventas-tabla thead th:nth-child(3),
+.lista-ventas-tabla thead th:nth-child(4),
+.lista-ventas-tabla thead th:nth-child(5) {
   text-align: center;
 }
 
-/* Centramos la columna de acciones */
-table thead th:last-child {
+.lista-ventas-tabla thead th:last-child {
   text-align: center;
 }
 
-/* ============================
-   Filas
-   ============================ */
-table tbody tr {
+/* Filas */
+.lista-ventas-tabla tbody tr {
   border-bottom: 1px solid var(--color-borde);
   transition: var(--transicion);
 }
 
-table tbody tr:last-child {
+.lista-ventas-tabla tbody tr:last-child {
   border-bottom: none;
 }
 
-table tbody tr:hover {
+.lista-ventas-tabla tbody tr:hover {
   background-color: var(--color-fila-hover);
 }
 
-/* ============================
-   Celdas
-   ============================ */
-table tbody td {
+/* Celdas */
+.lista-ventas-tabla tbody td {
   padding: 1rem 0.9rem;
   color: var(--color-texto);
   vertical-align: middle;
 }
 
-/* Cantidad, Precio y Total centrados */
-table tbody td:nth-child(3),
-table tbody td:nth-child(4),
-table tbody td:nth-child(5) {
+.lista-ventas-tabla tbody td:nth-child(3),
+.lista-ventas-tabla tbody td:nth-child(4),
+.lista-ventas-tabla tbody td:nth-child(5) {
   text-align: center;
   font-variant-numeric: tabular-nums;
 }
 
-/* Columna de Precio: color suave */
-table tbody td:nth-child(4) {
+.lista-ventas-tabla tbody td:nth-child(4) {
   color: var(--color-texto-suave);
 }
 
-/* Columna de Total: destacada */
-table tbody td:nth-child(5) {
+.lista-ventas-tabla tbody td:nth-child(5) {
   font-weight: 600;
   color: var(--color-texto);
 }
 
-/* Columna de Acciones: centrada */
-table tbody td:last-child {
+.lista-ventas-tabla tbody td:last-child {
   text-align: center;
   white-space: nowrap;
 }
 
-/* ============================
-   Botones de acciones
-   ============================ */
-table tbody td button {
+/* Botones de acciones */
+.lista-ventas-tabla tbody td button {
   padding: 0.45rem 0.9rem;
   margin: 0 0.2rem;
 
@@ -173,85 +151,59 @@ table tbody td button {
   transition: var(--transicion);
 }
 
-/* Botón "Editar" */
-table tbody td button:first-child {
+.lista-ventas-tabla tbody td button:first-child {
   background-color: transparent;
   color: var(--color-acento);
   border-color: var(--color-acento);
 }
 
-table tbody td button:first-child:hover {
+.lista-ventas-tabla tbody td button:first-child:hover {
   background-color: var(--color-acento);
   color: #FFFFFF;
   transform: translateY(-1px);
 }
 
-/* Botón "Eliminar" */
-table tbody td button:last-child {
+.lista-ventas-tabla tbody td button:last-child {
   background-color: transparent;
   color: var(--color-peligro);
   border-color: var(--color-peligro);
 }
 
-table tbody td button:last-child:hover {
+.lista-ventas-tabla tbody td button:last-child:hover {
   background-color: var(--color-peligro);
   color: #FFFFFF;
   transform: translateY(-1px);
 }
 
-table tbody td button:active {
-  transform: translateY(0);
-}
-
-table tbody td button:focus-visible {
-  outline: 2px solid var(--color-acento);
-  outline-offset: 2px;
-}
-
-/* ============================
-   Responsive
-   ============================ */
+/* Responsive */
 @media (max-width: 768px) {
-  div:has(> h2 + table) {
+  .lista-ventas-container {
     margin: 1rem;
     padding: 1.25rem;
     border-radius: 12px;
   }
 
-  div:has(> h2 + table) h2 {
+  .lista-ventas-titulo {
     font-size: 1.3rem;
     margin-bottom: 1.25rem;
   }
 
-  table {
+  .lista-ventas-tabla {
     font-size: 0.82rem;
   }
 
-  table thead th,
-  table tbody td {
+  .lista-ventas-tabla thead th,
+  .lista-ventas-tabla tbody td {
     padding: 0.7rem 0.55rem;
-  }
-
-  table thead th {
-    font-size: 0.7rem;
-  }
-
-  table tbody td button {
-    padding: 0.35rem 0.65rem;
-    font-size: 0.72rem;
-    margin: 0.15rem 0.1rem;
   }
 }
 
-/* ============================
-   Scroll horizontal en móviles muy pequeños
-   ============================ */
 @media (max-width: 560px) {
-  div:has(> h2 + table) {
+  .lista-ventas-container {
     overflow-x: auto;
   }
 
-  table {
+  .lista-ventas-tabla {
     min-width: 560px;
   }
 }

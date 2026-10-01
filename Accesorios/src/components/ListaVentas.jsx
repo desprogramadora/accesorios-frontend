@@ -22,16 +22,16 @@ function ListaVentas() {
       axios.delete(`http://localhost:3000/ventas/${id}`)
         .then(res => {
           alert(res.data.message);
-          cargarVentas(); // refrescar lista
+          cargarVentas();
         })
         .catch(err => console.error('Error al eliminar venta:', err));
     }
   };
 
   return (
-    <div>
-      <h2>Ventas de Accesorios</h2>
-      <table border="1">
+    <div className="lista-ventas-container">
+      <h2 className="lista-ventas-titulo">Ventas de Accesorios</h2>
+      <table className="lista-ventas-tabla">
         <thead>
           <tr>
             <th>Cliente</th>
