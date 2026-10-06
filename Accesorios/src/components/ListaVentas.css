@@ -1,209 +1,500 @@
 /* ============================
-   ListaVentas.css
+   ListaVentas.css — Card Grid Edition
+   Paleta Nude Elegante
    ============================ */
 
 :root {
   --color-fondo:        #FAF8F5;
   --color-superficie:   #FFFFFF;
   --color-crema:        #F0EBE3;
+  --color-crema-oscura: #E8DDD2;
   --color-borde:        #E5E0D8;
   --color-texto:        #2B2B2B;
-  --color-texto-suave:  #6B6B6B;
+  --color-texto-suave:  #7A7570;
   --color-acento:       #A68A64;
   --color-acento-hover: #8B7355;
   --color-peligro:      #B85C4A;
   --color-peligro-hover:#9C4A3A;
-  --color-fila-hover:   #F7F4EF;
+  --color-badge:        #C9B49A;
 
-  --sombra-suave:       0 2px 8px rgba(0, 0, 0, 0.04);
-  --sombra-media:       0 8px 24px rgba(0, 0, 0, 0.08);
-  --radio:              10px;
-  --transicion:         all 0.25s ease;
+  --sombra-suave:  0 2px 8px rgba(0, 0, 0, 0.05);
+  --sombra-media:  0 8px 28px rgba(0, 0, 0, 0.09);
+  --sombra-hover:  0 14px 36px rgba(0, 0, 0, 0.13);
+  --radio:         14px;
+  --radio-sm:      8px;
+  --transicion:    all 0.28s ease;
 }
 
-/* Contenedor principal */
+/* ============================
+   Contenedor principal
+   ============================ */
 .lista-ventas-container {
-  max-width: 1000px;
-  margin: 2.5rem auto;
-  padding: 2rem;
+  max-width: 1140px;
+  margin: 2.5rem auto 4rem;
+  padding: 2.25rem 2rem;
 
   background-color: var(--color-superficie);
   border: 1px solid var(--color-borde);
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow: var(--sombra-media);
 
   font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
   color: var(--color-texto);
 }
 
-/* Título */
-.lista-ventas-titulo {
-  margin: 0 0 1.75rem 0;
-  padding-bottom: 1rem;
-
-  font-family: 'Playfair Display', 'Georgia', serif;
-  font-size: 1.65rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--color-texto);
-
+/* ============================
+   Header (título + contador)
+   ============================ */
+.lista-ventas-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
   border-bottom: 1px solid var(--color-borde);
-  text-align: center;
 }
 
-/* Tabla */
-.lista-ventas-tabla {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
+.lista-ventas-titulo {
+  margin: 0;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-texto);
+}
+
+.lista-ventas-count {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-texto-suave);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background-color: var(--color-crema);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  border: 1px solid var(--color-borde);
+}
+
+/* ============================
+   Estado vacío
+   ============================ */
+.lista-ventas-vacia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 4rem 2rem;
+  color: var(--color-texto-suave);
+}
+
+.lista-ventas-vacia-icono {
+  font-size: 3rem;
+  opacity: 0.6;
+}
+
+.lista-ventas-vacia p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ============================
+   Grid de tarjetas
+   ============================ */
+.ventas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ============================
+   Tarjeta individual
+   ============================ */
+.venta-card {
+  display: flex;
+  flex-direction: column;
 
   background-color: var(--color-superficie);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+
   overflow: hidden;
+  transition: var(--transicion);
+}
+
+.venta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-hover);
+  border-color: var(--color-badge);
+}
+
+/* ============================
+   Zona imagen / ícono
+   ============================ */
+.venta-card-imagen {
+  position: relative;
+  background: linear-gradient(135deg, var(--color-crema) 0%, var(--color-crema-oscura) 100%);
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Foto real del producto */
+.venta-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.venta-card:hover .venta-card-img {
+  transform: scale(1.06);
+}
+
+/* Overlay degradado inferior para legibilidad del badge */
+.venta-card-imagen::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(43, 35, 28, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+/* Fallback emoji (sin foto) */
+.venta-card-emoji {
+  font-size: 3rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.10));
+}
+
+/* Badge de fecha */
+.venta-card-fecha-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.90);
+  color: var(--color-texto-suave);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 100px;
+  border: 1px solid var(--color-borde);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ============================
+   Cuerpo de la tarjeta
+   ============================ */
+.venta-card-body {
+  flex: 1;
+  padding: 1.25rem 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.venta-card-producto {
+  margin: 0;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-texto);
+  line-height: 1.3;
+}
+
+.venta-card-cliente {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   font-size: 0.92rem;
+  color: var(--color-texto);
 }
 
-/* Encabezados */
-.lista-ventas-tabla thead {
-  background-color: var(--color-crema);
-}
-
-.lista-ventas-tabla thead th {
-  padding: 1rem 0.9rem;
-
-  text-align: left;
-  font-size: 0.78rem;
+/* Etiquetas pequeñas */
+.venta-label {
+  display: block;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-texto-suave);
-
-  border-bottom: 1px solid var(--color-borde);
-  white-space: nowrap;
+  margin-bottom: 0.1rem;
 }
 
-.lista-ventas-tabla thead th:nth-child(3),
-.lista-ventas-tabla thead th:nth-child(4),
-.lista-ventas-tabla thead th:nth-child(5) {
+/* ============================
+   Detalles: cantidad / precio / total
+   ============================ */
+.venta-card-detalles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--color-borde);
+}
+
+.venta-detalle-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
   text-align: center;
 }
 
-.lista-ventas-tabla thead th:last-child {
-  text-align: center;
-}
-
-/* Filas */
-.lista-ventas-tabla tbody tr {
-  border-bottom: 1px solid var(--color-borde);
-  transition: var(--transicion);
-}
-
-.lista-ventas-tabla tbody tr:last-child {
-  border-bottom: none;
-}
-
-.lista-ventas-tabla tbody tr:hover {
-  background-color: var(--color-fila-hover);
-}
-
-/* Celdas */
-.lista-ventas-tabla tbody td {
-  padding: 1rem 0.9rem;
+.venta-valor {
+  font-size: 0.95rem;
+  font-weight: 500;
   color: var(--color-texto);
-  vertical-align: middle;
-}
-
-.lista-ventas-tabla tbody td:nth-child(3),
-.lista-ventas-tabla tbody td:nth-child(4),
-.lista-ventas-tabla tbody td:nth-child(5) {
-  text-align: center;
   font-variant-numeric: tabular-nums;
 }
 
-.lista-ventas-tabla tbody td:nth-child(4) {
-  color: var(--color-texto-suave);
+/* Total destacado */
+.venta-detalle-total {
+  background-color: var(--color-crema);
+  border-radius: var(--radio-sm);
+  padding: 0.4rem 0.3rem;
 }
 
-.lista-ventas-tabla tbody td:nth-child(5) {
-  font-weight: 600;
-  color: var(--color-texto);
+.venta-total {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-acento);
+  font-variant-numeric: tabular-nums;
 }
 
-.lista-ventas-tabla tbody td:last-child {
-  text-align: center;
-  white-space: nowrap;
+/* ============================
+   Botones de acción
+   ============================ */
+.venta-card-acciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  padding: 1rem 1.25rem 1.25rem;
+  margin-top: auto;
 }
 
-/* Botones de acciones */
-.lista-ventas-tabla tbody td button {
-  padding: 0.45rem 0.9rem;
-  margin: 0 0.2rem;
-
+.btn-editar,
+.btn-eliminar {
+  padding: 0.6rem 0.5rem;
+  border-radius: var(--radio-sm);
+  border: 1.5px solid transparent;
   font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-
-  border-radius: 6px;
-  border: 1px solid transparent;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: var(--transicion);
+  text-align: center;
 }
 
-.lista-ventas-tabla tbody td button:first-child {
+/* Editar — contorno nude */
+.btn-editar {
   background-color: transparent;
   color: var(--color-acento);
   border-color: var(--color-acento);
 }
 
-.lista-ventas-tabla tbody td button:first-child:hover {
+.btn-editar:hover {
   background-color: var(--color-acento);
   color: #FFFFFF;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(166, 138, 100, 0.25);
 }
 
-.lista-ventas-tabla tbody td button:last-child {
+/* Eliminar — contorno suave peligro */
+.btn-eliminar {
   background-color: transparent;
   color: var(--color-peligro);
   border-color: var(--color-peligro);
 }
 
-.lista-ventas-tabla tbody td button:last-child:hover {
+.btn-eliminar:hover {
   background-color: var(--color-peligro);
   color: #FFFFFF;
   transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(184, 92, 74, 0.22);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .lista-ventas-container {
-    margin: 1rem;
-    padding: 1.25rem;
-    border-radius: 12px;
-  }
+/* Focus accesible */
+.btn-editar:focus-visible,
+.btn-eliminar:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
 
+/* ============================
+   Responsive
+   ============================ */
+@media (max-width: 900px) {
+  .lista-ventas-container {
+    margin: 1.5rem 1rem 3rem;
+    padding: 1.75rem 1.5rem;
+  }
+  .ventas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .lista-ventas-container {
+    margin: 1rem 0.75rem 2.5rem;
+    padding: 1.5rem 1.1rem;
+    border-radius: 16px;
+  }
   .lista-ventas-titulo {
-    font-size: 1.3rem;
-    margin-bottom: 1.25rem;
+    font-size: 1.4rem;
   }
-
-  .lista-ventas-tabla {
-    font-size: 0.82rem;
+  .ventas-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
-
-  .lista-ventas-tabla thead th,
-  .lista-ventas-tabla tbody td {
-    padding: 0.7rem 0.55rem;
+  .venta-card-imagen {
+    height: 100px;
   }
 }
 
-@media (max-width: 560px) {
-  .lista-ventas-container {
-    overflow-x: auto;
-  }
+/* ====================================================
+   SHIMMER SKELETON — Loading state
+   ==================================================== */
 
-  .lista-ventas-tabla {
-    min-width: 560px;
+/* Animación del brillo que recorre el skeleton */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+
+/* Mixin reutilizable para cualquier elemento skeleton */
+.skeleton-card .skeleton-imagen,
+.skeleton-card .skeleton-line,
+.skeleton-card .skeleton-bloque,
+.skeleton-card .skeleton-btn {
+  background: linear-gradient(
+    90deg,
+    #EDE8E2 25%,
+    #F7F3EE 50%,
+    #EDE8E2 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 8px;
+}
+
+/* Tarjeta skeleton — misma estructura visual que la real */
+.skeleton-card {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Zona superior: reemplaza la foto */
+.skeleton-imagen {
+  width: 100%;
+  height: 160px;
+  border-radius: 0;
+}
+
+/* Líneas de texto */
+.skeleton-line {
+  height: 14px;
+}
+
+.skeleton-titulo {
+  width: 70%;
+  height: 20px;
+  margin-bottom: 0.35rem;
+}
+
+.skeleton-cliente {
+  width: 50%;
+  height: 13px;
+}
+
+/* Bloques de detalles (cantidad / precio / total) */
+.skeleton-detalles {
+  border-top: 1px solid var(--color-borde) !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+}
+
+.skeleton-bloque {
+  height: 40px;
+  border-radius: 8px;
+}
+
+.skeleton-bloque-total {
+  background: linear-gradient(
+    90deg,
+    #E8DFCF 25%,
+    #F5EFE4 50%,
+    #E8DFCF 75%
+  ) !important;
+  background-size: 600px 100% !important;
+  animation: shimmer 1.6s ease-in-out infinite !important;
+}
+
+/* Botones skeleton */
+.skeleton-btn {
+  height: 38px;
+  border-radius: var(--radio-sm);
+}
+
+/* Delay escalonado — cascada de onda entre las 6 tarjetas */
+.ventas-grid > .skeleton-card:nth-child(1) * { animation-delay: 0.00s; }
+.ventas-grid > .skeleton-card:nth-child(2) * { animation-delay: 0.12s; }
+.ventas-grid > .skeleton-card:nth-child(3) * { animation-delay: 0.24s; }
+.ventas-grid > .skeleton-card:nth-child(4) * { animation-delay: 0.36s; }
+.ventas-grid > .skeleton-card:nth-child(5) * { animation-delay: 0.48s; }
+.ventas-grid > .skeleton-card:nth-child(6) * { animation-delay: 0.60s; }
+
+/* Fade-in suave al aparecer las tarjetas reales */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.venta-card {
+  animation: fadeInUp 0.35s ease both;
+}
+
+.ventas-grid > .venta-card:nth-child(1)  { animation-delay: 0.00s; }
+.ventas-grid > .venta-card:nth-child(2)  { animation-delay: 0.06s; }
+.ventas-grid > .venta-card:nth-child(3)  { animation-delay: 0.12s; }
+.ventas-grid > .venta-card:nth-child(4)  { animation-delay: 0.18s; }
+.ventas-grid > .venta-card:nth-child(5)  { animation-delay: 0.24s; }
+.ventas-grid > .venta-card:nth-child(6)  { animation-delay: 0.30s; }
+.ventas-grid > .venta-card:nth-child(7)  { animation-delay: 0.36s; }
+.ventas-grid > .venta-card:nth-child(8)  { animation-delay: 0.42s; }
+.ventas-grid > .venta-card:nth-child(9)  { animation-delay: 0.48s; }
+.ventas-grid > .venta-card:nth-child(10) { animation-delay: 0.54s; }
+.ventas-grid > .venta-card:nth-child(11) { animation-delay: 0.60s; }
+.ventas-grid > .venta-card:nth-child(12) { animation-delay: 0.66s; }
+
+/* Respeta preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-card .skeleton-imagen,
+  .skeleton-card .skeleton-line,
+  .skeleton-card .skeleton-bloque,
+  .skeleton-card .skeleton-btn {
+    animation: none;
+    background: #EDE8E2;
+  }
+  .venta-card {
+    animation: none;
   }
 }

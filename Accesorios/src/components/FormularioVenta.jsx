@@ -41,25 +41,68 @@ function FormularioVenta() {
   };
 
   return (
-    <div>
-      <h2>Registrar Nueva Venta</h2>
-      <form onSubmit={handleSubmit}>
-        <select name="clientes_id" value={formData.clientes_id} onChange={handleChange} required>
-          <option value="">Seleccione cliente</option>
-          {clientes.map(c => (
-            <option key={c.id} value={c.id}>{c.nombre} - {c.grupo}</option>
-          ))}
-        </select>
+    <div className="formulario-venta-wrapper">
+      <h2 className="formulario-venta-titulo">Registrar Nueva Venta</h2>
 
-        <select name="producto_id" value={formData.producto_id} onChange={handleChange} required>
-          <option value="">Seleccione producto</option>
-          {productos.map(p => (
-            <option key={p.id} value={p.id}>{p.nombre} - ${p.precio}</option>
-          ))}
-        </select>
+      <form className="formulario-venta-form" onSubmit={handleSubmit}>
+        <div className="formulario-campo">
+          <label htmlFor="form-cliente">Cliente</label>
+          <select
+            id="form-cliente"
+            name="clientes_id"
+            value={formData.clientes_id}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Seleccione cliente</option>
+            {clientes.map(c => (
+              <option key={c.id} value={c.id}>{c.nombre} - {c.grupo}</option>
+            ))}
+          </select>
+        </div>
 
-        <input type="number" name="cantidad" placeholder="Cantidad" value={formData.cantidad} onChange={handleChange} required />
-        <input type="date" name="fecha" value={formData.fecha} onChange={handleChange} required />
+        <div className="formulario-campo">
+          <label htmlFor="form-producto">Producto</label>
+          <select
+            id="form-producto"
+            name="producto_id"
+            value={formData.producto_id}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Seleccione producto</option>
+            {productos.map(p => (
+              <option key={p.id} value={p.id}>{p.nombre} - ${p.precio}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="formulario-campo">
+          <label htmlFor="form-cantidad">Cantidad</label>
+          <input
+            id="form-cantidad"
+            type="number"
+            name="cantidad"
+            placeholder="Ej. 2"
+            value={formData.cantidad}
+            onChange={handleChange}
+            required
+            min="1"
+          />
+        </div>
+
+        <div className="formulario-campo">
+          <label htmlFor="form-fecha">Fecha</label>
+          <input
+            id="form-fecha"
+            type="date"
+            name="fecha"
+            value={formData.fecha}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
         <button type="submit">Registrar Venta</button>
       </form>
     </div>

@@ -1,149 +1,213 @@
 /* ============================
-   EditarVenta.css
-   Paleta neutra elegante
+   EditarVenta.css — Modal Overlay Elegante
+   Paleta Nude
    ============================ */
 
-:root {
-  --color-fondo:        #FAF8F5;
-  --color-superficie:   #FFFFFF;
-  --color-crema:        #F0EBE3;
-  --color-borde:        #E5E0D8;
-  --color-texto:        #2B2B2B;
-  --color-texto-suave:  #6B6B6B;
-  --color-acento:       #A68A64;
-  --color-acento-hover: #8B7355;
-  --sombra-suave:       0 2px 8px rgba(0, 0, 0, 0.04);
-  --sombra-media:       0 8px 24px rgba(0, 0, 0, 0.08);
-  --radio:              10px;
-  --transicion:         all 0.25s ease;
+/* ============================
+   Overlay oscuro de fondo
+   ============================ */
+.editar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(43, 35, 28, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* ============================
-   Contenedor del formulario
+   Modal
    ============================ */
-form {
+.editar-modal {
+  width: 100%;
+  max-width: 460px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E0D8;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: slideUp 0.25s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* ============================
+   Header del modal
+   ============================ */
+.editar-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid #E5E0D8;
+  background-color: #F0EBE3;
+}
+
+.editar-modal-titulo {
+  margin: 0;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #2B2B2B;
+}
+
+.editar-cerrar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #E5E0D8;
+  background-color: #FFFFFF;
+  color: #7A7570;
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.editar-cerrar:hover {
+  background-color: #B85C4A;
+  border-color: #B85C4A;
+  color: #FFFFFF;
+}
+
+/* ============================
+   Formulario
+   ============================ */
+.editar-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
-  max-width: 460px;
-  margin: 2rem auto;
-  padding: 2rem;
-
-  background-color: var(--color-superficie);
-  border: 1px solid var(--color-borde);
-  border-radius: 16px;
-  box-shadow: var(--sombra-media);
-
-  font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
-  color: var(--color-texto);
+  padding: 1.5rem;
 }
 
-/* ============================
-   Etiqueta opcional (si añades <label>)
-   ============================ */
-form label {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-texto-suave);
-  letter-spacing: 0.02em;
-  margin-bottom: -0.5rem;
+/* Campo con label */
+.editar-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
-/* ============================
-   Selects e inputs
-   ============================ */
-form select,
-form input[type="number"],
-form input[type="date"] {
+.editar-campo label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #7A7570;
+}
+
+/* Inputs y selects */
+.editar-form select,
+.editar-form input[type="number"],
+.editar-form input[type="date"] {
   width: 100%;
-  padding: 0.85rem 1rem;
-
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
-
-  border: 1px solid var(--color-borde);
-  border-radius: var(--radio);
-
-  font-size: 0.95rem;
+  padding: 0.8rem 1rem;
+  background-color: #FAF8F5;
+  color: #2B2B2B;
+  border: 1px solid #E5E0D8;
+  border-radius: 10px;
+  font-size: 0.92rem;
   font-family: inherit;
-
-  transition: var(--transicion);
+  transition: all 0.22s ease;
   outline: none;
-
   appearance: none;
   -webkit-appearance: none;
-  -moz-appearance: none;
 }
 
-/* Flecha personalizada para selects */
-form select {
+.editar-form select {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
-  background-size: 16px;
+  background-size: 15px;
   padding-right: 2.5rem;
   cursor: pointer;
 }
 
-/* Hover */
-form select:hover,
-form input[type="number"]:hover,
-form input[type="date"]:hover {
-  border-color: var(--color-acento);
-  background-color: var(--color-superficie);
+.editar-form select:hover,
+.editar-form input:hover {
+  border-color: #A68A64;
+  background-color: #FFFFFF;
 }
 
-/* Focus */
-form select:focus,
-form input[type="number"]:focus,
-form input[type="date"]:focus {
-  border-color: var(--color-acento);
-  background-color: var(--color-superficie);
+.editar-form select:focus,
+.editar-form input:focus {
+  border-color: #A68A64;
+  background-color: #FFFFFF;
   box-shadow: 0 0 0 3px rgba(166, 138, 100, 0.15);
 }
 
-/* Placeholder (por si añades inputs de texto) */
-form input::placeholder {
-  color: #A8A8A8;
+/* ============================
+   Botones
+   ============================ */
+.editar-acciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
-/* ============================
-   Botón principal
-   ============================ */
-form button[type="submit"] {
-  margin-top: 0.75rem;
-  padding: 0.95rem 1.5rem;
-
-  background-color: var(--color-acento);
-  color: #FFFFFF;
-
-  border: none;
-  border-radius: var(--radio);
-
-  font-size: 0.95rem;
+.editar-btn-cancelar,
+.editar-btn-guardar {
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.03em;
-  font-family: inherit;
-
   cursor: pointer;
-  transition: var(--transicion);
-  box-shadow: var(--sombra-suave);
+  transition: all 0.25s ease;
+  border: 1.5px solid transparent;
 }
 
-form button[type="submit"]:hover {
-  background-color: var(--color-acento-hover);
+.editar-btn-cancelar {
+  background-color: transparent;
+  color: #7A7570;
+  border-color: #E5E0D8;
+}
+
+.editar-btn-cancelar:hover {
+  background-color: #F0EBE3;
+  border-color: #C9B49A;
+  color: #2B2B2B;
+}
+
+.editar-btn-guardar {
+  background-color: #A68A64;
+  color: #FFFFFF;
+  border-color: #A68A64;
+}
+
+.editar-btn-guardar:hover {
+  background-color: #8B7355;
+  border-color: #8B7355;
   transform: translateY(-1px);
-  box-shadow: var(--sombra-media);
+  box-shadow: 0 4px 14px rgba(166, 138, 100, 0.30);
 }
 
-form button[type="submit"]:active {
+.editar-btn-guardar:active {
   transform: translateY(0);
-  box-shadow: var(--sombra-suave);
+  box-shadow: none;
 }
 
-form button[type="submit"]:focus-visible {
-  outline: 2px solid var(--color-acento);
+.editar-btn-cancelar:focus-visible,
+.editar-btn-guardar:focus-visible {
+  outline: 2px solid #A68A64;
   outline-offset: 2px;
 }
 
@@ -151,20 +215,13 @@ form button[type="submit"]:focus-visible {
    Responsive
    ============================ */
 @media (max-width: 480px) {
-  form {
-    margin: 1rem;
-    padding: 1.5rem;
-    border-radius: 12px;
+  .editar-modal {
+    border-radius: 16px;
   }
-
-  form select,
-  form input[type="number"],
-  form input[type="date"] {
-    padding: 0.75rem 0.9rem;
-    font-size: 0.9rem;
+  .editar-form {
+    padding: 1.25rem;
   }
-
-  form button[type="submit"] {
-    padding: 0.85rem 1.25rem;
+  .editar-acciones {
+    grid-template-columns: 1fr;
   }
 }
