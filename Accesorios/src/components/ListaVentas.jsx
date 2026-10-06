@@ -17,7 +17,8 @@ import imgAnillo   from '../assets/anillo.jpg';
 function getProductoImagen(nombreProducto = '') {
   const n = nombreProducto.toLowerCase();
   if (n.includes('diadema') || n.includes('terciopelo') || n.includes('vincha')) return imgDiadema;
-  if (n.includes('aret')    || n.includes('pendiente')  || n.includes('arete'))  return imgAretes;
+  if (n.includes('aret')    || n.includes('pendiente')  || n.includes('arete')
+   || n.includes('arito')   || n.includes('perla')      || n.includes('pearl'))  return imgAretes;
   if (n.includes('pulser')  || n.includes('brazalete')  || n.includes('cristal')) return imgPulsera;
   if (n.includes('collar')  || n.includes('gargantill') || n.includes('cadena')) return imgCollar;
   if (n.includes('anillo')  || n.includes('ring')       || n.includes('sortij')) return imgAnillo;
