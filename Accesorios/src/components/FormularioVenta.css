@@ -1,5 +1,5 @@
 /* ============================
-   FormularioVenta.css — Rosa + Rose Gold Elegante
+   FormularioVenta.css — Rosa Pastel Elegante — Joyería
    ============================ */
 
 /* ============================
@@ -20,7 +20,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, #F4859E 0%, #F9A8BC 35%, #E0BFA8 70%, #C9956B 100%);
+  background: linear-gradient(135deg, #F48FB1 0%, #F8BBD0 35%, #CE93D8 70%, #E1BEE7 100%);
   border-radius: 20px 20px 0 0;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-bottom: none;
@@ -35,11 +35,11 @@
   inset: 0;
   background:
     radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.18) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(201, 149, 107, 0.15) 0%, transparent 40%);
+    radial-gradient(circle at 80% 20%, rgba(206, 147, 216, 0.15) 0%, transparent 40%);
   pointer-events: none;
 }
 
-/* Línea rose gold inferior */
+/* Línea rosa inferior */
 .fv-banner::after {
   content: '';
   position: absolute;
@@ -69,7 +69,7 @@
   font-weight: 700;
   color: #FFFFFF;
   letter-spacing: 0.01em;
-  text-shadow: 0 1px 4px rgba(201, 149, 107, 0.35);
+  text-shadow: 0 1px 4px rgba(236, 64, 122, 0.25);
   z-index: 1;
 }
 
@@ -122,11 +122,11 @@
   padding: 2rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 0 0 20px 20px;
-  border: 1px solid #F2D6DE;
+  border: 1px solid #F5C6D0;
   border-top: none;
   box-shadow:
-    0 8px 32px rgba(244, 133, 158, 0.07),
-    0 1px 0 rgba(201, 149, 107, 0.05) inset;
+    0 8px 32px rgba(244, 143, 177, 0.07),
+    0 1px 0 rgba(236, 64, 122, 0.05) inset;
 }
 
 /* ============================
@@ -152,7 +152,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #9B8A96;
+  color: #A0889A;
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -175,10 +175,10 @@
   width: 100%;
   padding: 0.85rem 1rem;
 
-  background-color: #FFF7F8;
-  color: #3D2B3A;
+  background-color: #FFF5F7;
+  color: #4A2D3F;
 
-  border: 1.5px solid #F2D6DE;
+  border: 1.5px solid #F5C6D0;
   border-radius: 12px;
 
   font-size: 0.92rem;
@@ -194,7 +194,7 @@
 
 /* Flecha personalizada para selects */
 .fv-input-wrap select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9956B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EC407A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 16px;
@@ -206,23 +206,23 @@
 .fv-input-wrap select:hover,
 .fv-input-wrap input[type="number"]:hover,
 .fv-input-wrap input[type="date"]:hover {
-  border-color: #F9A8BC;
+  border-color: #F8BBD0;
   background-color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(244, 133, 158, 0.07);
+  box-shadow: 0 2px 8px rgba(244, 143, 177, 0.07);
 }
 
 /* Focus */
 .fv-input-wrap select:focus,
 .fv-input-wrap input[type="number"]:focus,
 .fv-input-wrap input[type="date"]:focus {
-  border-color: #F4859E;
+  border-color: #F48FB1;
   background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(244, 133, 158, 0.12), 0 2px 8px rgba(244, 133, 158, 0.08);
+  box-shadow: 0 0 0 3px rgba(244, 143, 177, 0.12), 0 2px 8px rgba(244, 143, 177, 0.08);
 }
 
 /* Placeholder */
 .fv-input-wrap input::placeholder {
-  color: #CCBFC7;
+  color: #D4BFC9;
 }
 
 /* ============================
@@ -232,7 +232,7 @@
   margin-top: 0.5rem;
   padding: 1rem 1.5rem;
 
-  background: linear-gradient(135deg, #F4859E 0%, #E0BFA8 50%, #C9956B 100%);
+  background: linear-gradient(135deg, #F48FB1 0%, #F06292 50%, #EC407A 100%);
   background-size: 200% 200%;
   color: #FFFFFF;
 
@@ -247,7 +247,7 @@
 
   cursor: pointer;
   transition: all 0.35s ease;
-  box-shadow: 0 4px 18px rgba(201, 149, 107, 0.28);
+  box-shadow: 0 4px 18px rgba(236, 64, 122, 0.28);
   position: relative;
   overflow: hidden;
 }
@@ -272,17 +272,17 @@
   background-position: 100% 100%;
   transform: translateY(-2px);
   box-shadow:
-    0 8px 28px rgba(201, 149, 107, 0.32),
-    0 0 12px rgba(244, 133, 158, 0.15);
+    0 8px 28px rgba(236, 64, 122, 0.30),
+    0 0 12px rgba(244, 143, 177, 0.18);
 }
 
 .fv-btn-submit:active {
   transform: translateY(0);
-  box-shadow: 0 4px 16px rgba(201, 149, 107, 0.22);
+  box-shadow: 0 4px 16px rgba(236, 64, 122, 0.22);
 }
 
 .fv-btn-submit:focus-visible {
-  outline: 2px solid #C9956B;
+  outline: 2px solid #EC407A;
   outline-offset: 2px;
 }
 

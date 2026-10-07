@@ -1,6 +1,6 @@
 /* ============================
    EditarVenta.css — Modal Elegante
-   Paleta Rosa + Rose Gold
+   Paleta Rosa Pastel Elegante — Joyería
    ============================ */
 
 /* ============================
@@ -32,11 +32,11 @@
   width: 100%;
   max-width: 480px;
   background-color: #FFFFFF;
-  border: 1px solid rgba(242, 214, 222, 0.6);
+  border: 1px solid rgba(245, 198, 208, 0.6);
   border-radius: 24px;
   box-shadow:
-    0 24px 80px rgba(244, 133, 158, 0.12),
-    0 8px 24px rgba(201, 149, 107, 0.08);
+    0 24px 80px rgba(244, 143, 177, 0.12),
+    0 8px 24px rgba(206, 147, 216, 0.08);
   overflow: hidden;
   animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -55,11 +55,11 @@
   justify-content: space-between;
   padding: 1.25rem 1.5rem 1rem;
   border-bottom: none;
-  background: linear-gradient(135deg, #F4859E 0%, #F9A8BC 35%, #E0BFA8 70%, #C9956B 100%);
+  background: linear-gradient(135deg, #F48FB1 0%, #F8BBD0 35%, #CE93D8 70%, #E1BEE7 100%);
   position: relative;
 }
 
-/* Línea rose gold debajo */
+/* Línea rosa debajo */
 .editar-modal-header::after {
   content: '';
   position: absolute;
@@ -76,7 +76,7 @@
   font-size: 1.15rem;
   font-weight: 600;
   color: #FFFFFF;
-  text-shadow: 0 1px 4px rgba(201, 149, 107, 0.3);
+  text-shadow: 0 1px 4px rgba(236, 64, 122, 0.25);
 }
 
 .editar-cerrar {
@@ -127,7 +127,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #C9956B;
+  color: #EC407A;
 }
 
 /* Inputs y selects */
@@ -136,9 +136,9 @@
 .editar-form input[type="date"] {
   width: 100%;
   padding: 0.8rem 1rem;
-  background-color: #FFF7F8;
-  color: #3D2B3A;
-  border: 1.5px solid #F2D6DE;
+  background-color: #FFF5F7;
+  color: #4A2D3F;
+  border: 1.5px solid #F5C6D0;
   border-radius: 12px;
   font-size: 0.92rem;
   font-family: inherit;
@@ -149,7 +149,7 @@
 }
 
 .editar-form select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9956B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23EC407A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 15px;
@@ -159,16 +159,16 @@
 
 .editar-form select:hover,
 .editar-form input:hover {
-  border-color: #F9A8BC;
+  border-color: #F8BBD0;
   background-color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(244, 133, 158, 0.07);
+  box-shadow: 0 2px 8px rgba(244, 143, 177, 0.07);
 }
 
 .editar-form select:focus,
 .editar-form input:focus {
-  border-color: #F4859E;
+  border-color: #F48FB1;
   background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(244, 133, 158, 0.10), 0 2px 8px rgba(244, 133, 158, 0.06);
+  box-shadow: 0 0 0 3px rgba(244, 143, 177, 0.10), 0 2px 8px rgba(244, 143, 177, 0.06);
 }
 
 /* ============================
@@ -196,22 +196,22 @@
 
 .editar-btn-cancelar {
   background-color: transparent;
-  color: #9B8A96;
-  border-color: #F2D6DE;
+  color: #A0889A;
+  border-color: #F5C6D0;
 }
 
 .editar-btn-cancelar:hover {
-  background-color: #FFF0F3;
-  border-color: #F9A8BC;
-  color: #3D2B3A;
+  background-color: #FFE8EF;
+  border-color: #F8BBD0;
+  color: #4A2D3F;
 }
 
 .editar-btn-guardar {
-  background: linear-gradient(135deg, #F4859E 0%, #E0BFA8 50%, #C9956B 100%);
+  background: linear-gradient(135deg, #F48FB1 0%, #F06292 50%, #EC407A 100%);
   background-size: 200% 200%;
   color: #FFFFFF;
   border-color: transparent;
-  box-shadow: 0 2px 12px rgba(201, 149, 107, 0.22);
+  box-shadow: 0 2px 12px rgba(236, 64, 122, 0.25);
   position: relative;
   overflow: hidden;
 }
@@ -236,8 +236,8 @@
   background-position: 100% 100%;
   transform: translateY(-1px);
   box-shadow:
-    0 6px 24px rgba(201, 149, 107, 0.28),
-    0 0 10px rgba(244, 133, 158, 0.10);
+    0 6px 24px rgba(236, 64, 122, 0.28),
+    0 0 10px rgba(244, 143, 177, 0.12);
 }
 
 .editar-btn-guardar:active {
@@ -247,7 +247,7 @@
 
 .editar-btn-cancelar:focus-visible,
 .editar-btn-guardar:focus-visible {
-  outline: 2px solid #C9956B;
+  outline: 2px solid #EC407A;
   outline-offset: 2px;
 }
 

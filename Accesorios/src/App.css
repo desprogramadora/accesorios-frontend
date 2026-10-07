@@ -1,6 +1,6 @@
 /* ============================
    App.css — Layout Global Elegante
-   Paleta Rosa + Rose Gold + Celeste
+   Paleta Rosa Pastel Elegante — Joyería
    ============================ */
 
 /* ============================
@@ -16,11 +16,11 @@
    Header
    ============================ */
 .app-header {
-  background: linear-gradient(135deg, #F4859E 0%, #F9A8BC 30%, #E0BFA8 60%, #C9956B 100%);
+  background: linear-gradient(135deg, #F48FB1 0%, #F8BBD0 30%, #CE93D8 60%, #E1BEE7 100%);
   border-bottom: none;
   box-shadow:
-    0 4px 24px rgba(244, 133, 158, 0.18),
-    0 2px 8px rgba(201, 149, 107, 0.10);
+    0 4px 24px rgba(244, 143, 177, 0.20),
+    0 2px 8px rgba(206, 147, 216, 0.12);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -48,7 +48,7 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #FFFFFF;
-  text-shadow: 0 1px 4px rgba(201, 149, 107, 0.3);
+  text-shadow: 0 1px 4px rgba(236, 64, 122, 0.25);
 }
 
 .app-subtitulo {
@@ -66,12 +66,12 @@
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* Línea shimmer rose gold debajo del header */
+/* Línea shimmer rosa pastel debajo del header */
 .app-header::after {
   content: '';
   display: block;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #E0BFA8, #C9956B, #E0BFA8, transparent);
+  background: linear-gradient(90deg, transparent, #F8BBD0, #F48FB1, #F8BBD0, transparent);
   opacity: 0.7;
 }
 
@@ -92,8 +92,8 @@
   text-align: center;
   padding: 1.75rem 1rem;
   font-size: 0.78rem;
-  color: #9B8A96;
-  border-top: 1px solid #F2D6DE;
+  color: #A0889A;
+  border-top: 1px solid #F5C6D0;
   letter-spacing: 0.06em;
   background-color: transparent;
 }
