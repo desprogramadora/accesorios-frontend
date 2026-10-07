@@ -1,6 +1,6 @@
 /* ============================
-   App.css — Layout Global Elegante
-   Paleta Nude + Rojo Vino
+   App.css — Layout Global Llamativo
+   Paleta Rosa + Celeste + Neón
    ============================ */
 
 /* ============================
@@ -16,16 +16,14 @@
    Header
    ============================ */
 .app-header {
-  background: linear-gradient(135deg, #1a1118 0%, #2d1520 40%, #3a1a25 70%, #2d1520 100%);
-  border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+  background: linear-gradient(135deg, #FF6B9D 0%, #FF85B1 30%, #C56CFF 60%, #7EC8E3 100%);
+  border-bottom: none;
   box-shadow:
-    0 2px 20px rgba(0, 0, 0, 0.3),
-    0 1px 0 rgba(201, 169, 110, 0.08);
+    0 4px 24px rgba(255, 107, 157, 0.20),
+    0 2px 8px rgba(197, 108, 255, 0.12);
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
 }
 
 .app-header-inner {
@@ -40,7 +38,7 @@
 .app-logo {
   font-size: 1.6rem;
   line-height: 1;
-  filter: drop-shadow(0 0 8px rgba(201, 169, 110, 0.4));
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 
 .app-titulo {
@@ -49,8 +47,8 @@
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: #FAF8F5;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  color: #FFFFFF;
+  text-shadow: 0 1px 4px rgba(197, 108, 255, 0.3);
 }
 
 .app-subtitulo {
@@ -58,23 +56,29 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-dorado, #C9A96E);
-  background: linear-gradient(135deg, rgba(114, 47, 55, 0.3), rgba(114, 47, 55, 0.15));
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.22);
   padding: 0.3rem 0.9rem;
   border-radius: 100px;
-  border: 1px solid rgba(201, 169, 110, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   margin-left: auto;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* Línea decorativa dorada debajo del header */
+/* Línea decorativa neón debajo del header */
 .app-header::after {
   content: '';
   display: block;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-dorado, #C9A96E), transparent);
-  opacity: 0.4;
+  height: 3px;
+  background: linear-gradient(90deg, #FF2E93, #00D4FF, #C56CFF, #FF2E93);
+  background-size: 300% 100%;
+  animation: neonSlide 4s linear infinite;
+}
+
+@keyframes neonSlide {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }
 
 /* ============================
@@ -94,10 +98,10 @@
   text-align: center;
   padding: 1.75rem 1rem;
   font-size: 0.78rem;
-  color: rgba(201, 169, 110, 0.5);
-  border-top: 1px solid rgba(201, 169, 110, 0.1);
+  color: #9B8A96;
+  border-top: 1px solid #F5D5E0;
   letter-spacing: 0.06em;
-  background: linear-gradient(to top, rgba(26, 17, 24, 0.8), transparent);
+  background-color: transparent;
 }
 
 .app-footer p {

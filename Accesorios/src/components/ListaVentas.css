@@ -1,27 +1,27 @@
 /* ============================
    ListaVentas.css — Card Grid Edition
-   Paleta Nude + Rojo Vino Elegante
+   Paleta Rosa + Celeste + Nude + Neón
    ============================ */
 
 :root {
-  --color-fondo:        #1a1118;
+  --color-fondo:        #FFF5F7;
   --color-superficie:   #FFFFFF;
-  --color-crema:        #F0EBE3;
-  --color-crema-oscura: #E8DDD2;
-  --color-borde:        #E5E0D8;
-  --color-texto:        #2B2B2B;
-  --color-texto-suave:  #7A7570;
-  --color-acento:       #722F37;
-  --color-acento-hover: #5A252C;
-  --color-dorado:       #C9A96E;
-  --color-dorado-oscuro:#A68A64;
-  --color-peligro:      #B85C4A;
-  --color-peligro-hover:#9C4A3A;
-  --color-badge:        #C9A96E;
+  --color-crema:        #FFF0F5;
+  --color-crema-oscura: #FFE4EC;
+  --color-borde:        #F5D5E0;
+  --color-texto:        #3D2B3A;
+  --color-texto-suave:  #9B8A96;
+  --color-acento:       #FF6B9D;
+  --color-acento-hover: #E85A8A;
+  --color-dorado:       #C56CFF;
+  --color-dorado-oscuro:#A855E6;
+  --color-peligro:      #FF6B6B;
+  --color-peligro-hover:#E55555;
+  --color-badge:        #7EC8E3;
 
-  --sombra-suave:  0 2px 12px rgba(0, 0, 0, 0.06);
-  --sombra-media:  0 8px 32px rgba(0, 0, 0, 0.10);
-  --sombra-hover:  0 16px 44px rgba(114, 47, 55, 0.14);
+  --sombra-suave:  0 2px 12px rgba(255, 107, 157, 0.06);
+  --sombra-media:  0 8px 32px rgba(255, 107, 157, 0.08);
+  --sombra-hover:  0 16px 44px rgba(255, 107, 157, 0.16);
   --radio:         16px;
   --radio-sm:      10px;
   --transicion:    all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -35,12 +35,12 @@
   margin: 2.5rem auto 4rem;
   padding: 2.5rem 2.25rem;
 
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid rgba(229, 224, 216, 0.6);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(245, 213, 224, 0.6);
   border-radius: 24px;
   box-shadow:
     var(--sombra-media),
-    0 0 0 1px rgba(201, 169, 110, 0.06);
+    0 0 0 1px rgba(255, 107, 157, 0.04);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
@@ -60,7 +60,7 @@
   padding-bottom: 1.5rem;
   margin-bottom: 2rem;
   border-bottom: 2px solid transparent;
-  border-image: linear-gradient(90deg, var(--color-acento), var(--color-dorado), transparent) 1;
+  border-image: linear-gradient(90deg, #FF6B9D, #C56CFF, #7EC8E3, transparent) 1;
 }
 
 .lista-ventas-titulo {
@@ -73,13 +73,13 @@
   position: relative;
 }
 
-/* Subrayado vino decorativo */
+/* Subrayado decorativo rosa→celeste */
 .lista-ventas-titulo::after {
   content: '';
   display: block;
   width: 50px;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-acento), var(--color-dorado));
+  background: linear-gradient(90deg, #FF6B9D, #7EC8E3);
   border-radius: 2px;
   margin-top: 0.5rem;
 }
@@ -87,14 +87,14 @@
 .lista-ventas-count {
   font-size: 0.78rem;
   font-weight: 600;
-  color: #FAF8F5;
+  color: #FFFFFF;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, var(--color-acento), var(--color-acento-hover));
+  background: linear-gradient(135deg, #FF6B9D, #C56CFF);
   padding: 0.35rem 0.9rem;
   border-radius: 100px;
   border: none;
-  box-shadow: 0 2px 8px rgba(114, 47, 55, 0.2);
+  box-shadow: 0 2px 10px rgba(255, 107, 157, 0.25);
 }
 
 /* ============================
@@ -145,7 +145,7 @@
   position: relative;
 }
 
-/* Borde superior decorativo rojo vino */
+/* Borde superior decorativo rosa→celeste */
 .venta-card::before {
   content: '';
   position: absolute;
@@ -153,7 +153,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-acento), var(--color-dorado), var(--color-acento));
+  background: linear-gradient(90deg, #FF6B9D, #C56CFF, #7EC8E3);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 3;
@@ -162,7 +162,7 @@
 .venta-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--sombra-hover);
-  border-color: rgba(114, 47, 55, 0.2);
+  border-color: rgba(255, 107, 157, 0.25);
 }
 
 .venta-card:hover::before {
@@ -174,7 +174,7 @@
    ============================ */
 .venta-card-imagen {
   position: relative;
-  background: linear-gradient(135deg, var(--color-crema) 0%, var(--color-crema-oscura) 100%);
+  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4EC 50%, #E8F4FD 100%);
   height: 170px;
   display: flex;
   align-items: center;
@@ -196,7 +196,7 @@
   transform: scale(1.08);
 }
 
-/* Overlay degradado inferior con tinte vino */
+/* Overlay degradado inferior con tinte suave rosa */
 .venta-card-imagen::after {
   content: '';
   position: absolute;
@@ -204,8 +204,8 @@
   background: linear-gradient(
     to bottom,
     transparent 30%,
-    rgba(114, 47, 55, 0.12) 70%,
-    rgba(43, 35, 28, 0.25) 100%
+    rgba(255, 107, 157, 0.06) 70%,
+    rgba(255, 240, 245, 0.30) 100%
   );
   pointer-events: none;
 }
@@ -214,7 +214,7 @@
 .venta-card-emoji {
   font-size: 3rem;
   line-height: 1;
-  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+  filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.2));
 }
 
 /* Badge de fecha */
@@ -223,17 +223,17 @@
   top: 10px;
   right: 10px;
   z-index: 2;
-  background: linear-gradient(135deg, rgba(114, 47, 55, 0.85), rgba(90, 37, 44, 0.90));
-  color: #FAF8F5;
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.88), rgba(197, 108, 255, 0.88));
+  color: #FFFFFF;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   padding: 0.25rem 0.7rem;
   border-radius: 100px;
-  border: 1px solid rgba(201, 169, 110, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 10px rgba(255, 107, 157, 0.25);
 }
 
 /* ============================
@@ -304,10 +304,10 @@
 
 /* Total destacado */
 .venta-detalle-total {
-  background: linear-gradient(135deg, rgba(114, 47, 55, 0.08), rgba(114, 47, 55, 0.04));
+  background: linear-gradient(135deg, rgba(255, 107, 157, 0.08), rgba(197, 108, 255, 0.06));
   border-radius: var(--radio-sm);
   padding: 0.4rem 0.3rem;
-  border: 1px solid rgba(114, 47, 55, 0.1);
+  border: 1px solid rgba(255, 107, 157, 0.12);
 }
 
 .venta-total {
@@ -342,32 +342,32 @@
   text-align: center;
 }
 
-/* Editar — contorno vino */
+/* Editar — contorno celeste */
 .btn-editar {
   background-color: transparent;
-  color: var(--color-acento);
-  border-color: var(--color-acento);
+  color: #7EC8E3;
+  border-color: #7EC8E3;
 }
 
 .btn-editar:hover {
-  background: linear-gradient(135deg, var(--color-acento), var(--color-acento-hover));
+  background: linear-gradient(135deg, #7EC8E3, #5BB8D9);
   color: #FFFFFF;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(114, 47, 55, 0.25);
+  box-shadow: 0 4px 14px rgba(126, 200, 227, 0.30);
 }
 
-/* Eliminar — contorno suave peligro */
+/* Eliminar — contorno rosa/rojo suave */
 .btn-eliminar {
   background-color: transparent;
-  color: var(--color-peligro);
-  border-color: var(--color-peligro);
+  color: #FF6B6B;
+  border-color: #FF6B6B;
 }
 
 .btn-eliminar:hover {
-  background: linear-gradient(135deg, var(--color-peligro), var(--color-peligro-hover));
+  background: linear-gradient(135deg, #FF6B6B, #E55555);
   color: #FFFFFF;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(184, 92, 74, 0.25);
+  box-shadow: 0 4px 14px rgba(255, 107, 107, 0.30);
 }
 
 /* Focus accesible */
@@ -427,9 +427,9 @@
 .skeleton-card .skeleton-btn {
   background: linear-gradient(
     90deg,
-    #EDE8E2 25%,
-    #F7F3EE 50%,
-    #EDE8E2 75%
+    #FFE4EC 25%,
+    #FFF5F7 50%,
+    #FFE4EC 75%
   );
   background-size: 600px 100%;
   animation: shimmer 1.6s ease-in-out infinite;
@@ -483,9 +483,9 @@
 .skeleton-bloque-total {
   background: linear-gradient(
     90deg,
-    #E8DFCF 25%,
-    #F5EFE4 50%,
-    #E8DFCF 75%
+    #F5D0C5 25%,
+    #FFF0F5 50%,
+    #F5D0C5 75%
   ) !important;
   background-size: 600px 100% !important;
   animation: shimmer 1.6s ease-in-out infinite !important;
@@ -535,7 +535,7 @@
   .skeleton-card .skeleton-bloque,
   .skeleton-card .skeleton-btn {
     animation: none;
-    background: #EDE8E2;
+    background: #FFE4EC;
   }
   .venta-card {
     animation: none;
