@@ -1,6 +1,6 @@
 /* ============================
-   App.css — Layout Global Llamativo
-   Paleta Rosa + Celeste + Neón
+   App.css — Layout Global Elegante
+   Paleta Rosa + Rose Gold + Celeste
    ============================ */
 
 /* ============================
@@ -16,11 +16,11 @@
    Header
    ============================ */
 .app-header {
-  background: linear-gradient(135deg, #FF6B9D 0%, #FF85B1 30%, #C56CFF 60%, #7EC8E3 100%);
+  background: linear-gradient(135deg, #F4859E 0%, #F9A8BC 30%, #E0BFA8 60%, #C9956B 100%);
   border-bottom: none;
   box-shadow:
-    0 4px 24px rgba(255, 107, 157, 0.20),
-    0 2px 8px rgba(197, 108, 255, 0.12);
+    0 4px 24px rgba(244, 133, 158, 0.18),
+    0 2px 8px rgba(201, 149, 107, 0.10);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -38,7 +38,7 @@
 .app-logo {
   font-size: 1.6rem;
   line-height: 1;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }
 
 .app-titulo {
@@ -48,7 +48,7 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   color: #FFFFFF;
-  text-shadow: 0 1px 4px rgba(197, 108, 255, 0.3);
+  text-shadow: 0 1px 4px rgba(201, 149, 107, 0.3);
 }
 
 .app-subtitulo {
@@ -60,25 +60,19 @@
   background: rgba(255, 255, 255, 0.22);
   padding: 0.3rem 0.9rem;
   border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.30);
   margin-left: auto;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 
-/* Línea decorativa neón debajo del header */
+/* Línea shimmer rose gold debajo del header */
 .app-header::after {
   content: '';
   display: block;
-  height: 3px;
-  background: linear-gradient(90deg, #FF2E93, #00D4FF, #C56CFF, #FF2E93);
-  background-size: 300% 100%;
-  animation: neonSlide 4s linear infinite;
-}
-
-@keyframes neonSlide {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 300% 50%; }
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #E0BFA8, #C9956B, #E0BFA8, transparent);
+  opacity: 0.7;
 }
 
 /* ============================
@@ -99,7 +93,7 @@
   padding: 1.75rem 1rem;
   font-size: 0.78rem;
   color: #9B8A96;
-  border-top: 1px solid #F5D5E0;
+  border-top: 1px solid #F2D6DE;
   letter-spacing: 0.06em;
   background-color: transparent;
 }

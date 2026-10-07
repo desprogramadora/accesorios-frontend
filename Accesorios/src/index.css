@@ -1,6 +1,6 @@
 /* ============================
    index.css — Reset y base global
-   Paleta Rosa Suave + Celeste + Nude + Neón
+   Paleta Rosa Suave + Rose Gold + Celeste + Lavanda
    ============================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
@@ -15,36 +15,39 @@
   --sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   --serif: 'Playfair Display', 'Georgia', serif;
 
-  /* Paleta base — clarita y llamativa */
-  --color-fondo:        #FFF5F7;
-  --color-fondo-sutil:  #FFF0F3;
+  /* Paleta base — clara y elegante */
+  --color-fondo:        #FFF7F8;
+  --color-fondo-sutil:  #FFF2F4;
   --color-superficie:   #FFFFFF;
-  --color-crema:        #FFF0F5;
+  --color-crema:        #FFF0F3;
   --color-crema-oscura: #FFE4EC;
-  --color-borde:        #F5D5E0;
+  --color-borde:        #F2D6DE;
   --color-texto:        #3D2B3A;
   --color-texto-suave:  #9B8A96;
 
-  /* Rosa principal */
-  --color-rosa:         #FF6B9D;
-  --color-rosa-claro:   #FF85B1;
-  --color-rosa-suave:   rgba(255, 107, 157, 0.12);
-  --color-rosa-glow:    rgba(255, 107, 157, 0.25);
+  /* Rosa suave principal */
+  --color-rosa:         #F4859E;
+  --color-rosa-claro:   #F9A8BC;
+  --color-rosa-suave:   rgba(244, 133, 158, 0.12);
+  --color-rosa-glow:    rgba(244, 133, 158, 0.20);
 
-  /* Celeste */
-  --color-celeste:      #7EC8E3;
-  --color-celeste-claro:#A8DAEF;
-  --color-celeste-suave:rgba(126, 200, 227, 0.15);
+  /* Rose gold */
+  --color-rosegold:     #C9956B;
+  --color-rosegold-claro: #E0BFA8;
+  --color-rosegold-suave: rgba(201, 149, 107, 0.12);
 
-  /* Neón / acento vibrante */
-  --color-neon-pink:    #FF2E93;
-  --color-neon-blue:    #00D4FF;
-  --color-neon-violet:  #C56CFF;
+  /* Celeste pastel */
+  --color-celeste:      #A8D8EA;
+  --color-celeste-claro:#C5E6F2;
+  --color-celeste-suave:rgba(168, 216, 234, 0.15);
+
+  /* Lavanda suave */
+  --color-lavanda:      #C4B1D4;
+  --color-lavanda-claro:#D9CCE5;
 
   /* Nude cálido */
   --color-nude:         #F5D0C5;
   --color-nude-claro:   #FADED4;
-  --color-nude-oscuro:  #E8B5A8;
 
   font-family: var(--sans);
   font-size: 16px;
@@ -63,9 +66,9 @@ body {
   padding: 0;
   min-height: 100svh;
   background:
-    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(126, 200, 227, 0.15), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(255, 107, 157, 0.12), transparent),
-    radial-gradient(ellipse 50% 50% at 50% 90%, rgba(197, 108, 255, 0.08), transparent),
+    radial-gradient(ellipse 80% 50% at 20% 0%, rgba(168, 216, 234, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 10%, rgba(244, 133, 158, 0.10), transparent),
+    radial-gradient(ellipse 50% 50% at 50% 90%, rgba(201, 149, 107, 0.07), transparent),
     var(--color-fondo);
   background-attachment: fixed;
 }
@@ -124,11 +127,11 @@ a:hover {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-rosa);
+  background: var(--color-rosegold);
 }
 
 /* Selección de texto */
 ::selection {
-  background-color: rgba(255, 107, 157, 0.25);
+  background-color: rgba(244, 133, 158, 0.22);
   color: #3D2B3A;
 }

@@ -1,5 +1,5 @@
 /* ============================
-   FormularioVenta.css — Rosa + Celeste + Neón
+   FormularioVenta.css — Rosa + Rose Gold Elegante
    ============================ */
 
 /* ============================
@@ -20,7 +20,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1.5rem 2rem;
-  background: linear-gradient(135deg, #FF6B9D 0%, #FF85B1 35%, #C56CFF 70%, #7EC8E3 100%);
+  background: linear-gradient(135deg, #F4859E 0%, #F9A8BC 35%, #E0BFA8 70%, #C9956B 100%);
   border-radius: 20px 20px 0 0;
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-bottom: none;
@@ -34,25 +34,25 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.20) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.15) 0%, transparent 40%);
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(201, 149, 107, 0.15) 0%, transparent 40%);
   pointer-events: none;
 }
 
-/* Línea neón inferior */
+/* Línea rose gold inferior */
 .fv-banner::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 2rem;
   right: 2rem;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
 }
 
 .fv-banner-icono {
   font-size: 2rem;
-  filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 2px 10px rgba(255, 255, 255, 0.4));
   z-index: 1;
   animation: floatGem 3s ease-in-out infinite;
 }
@@ -69,7 +69,7 @@
   font-weight: 700;
   color: #FFFFFF;
   letter-spacing: 0.01em;
-  text-shadow: 0 1px 6px rgba(197, 108, 255, 0.4);
+  text-shadow: 0 1px 4px rgba(201, 149, 107, 0.35);
   z-index: 1;
 }
 
@@ -100,7 +100,7 @@
   font-weight: 500;
 
   animation: toastSlide 0.35s ease;
-  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.15);
+  box-shadow: 0 4px 16px rgba(76, 175, 80, 0.12);
 }
 
 .fv-toast-icono {
@@ -122,11 +122,11 @@
   padding: 2rem;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 0 0 20px 20px;
-  border: 1px solid #F5D5E0;
+  border: 1px solid #F2D6DE;
   border-top: none;
   box-shadow:
-    0 8px 32px rgba(255, 107, 157, 0.08),
-    0 1px 0 rgba(255, 133, 177, 0.06) inset;
+    0 8px 32px rgba(244, 133, 158, 0.07),
+    0 1px 0 rgba(201, 149, 107, 0.05) inset;
 }
 
 /* ============================
@@ -175,10 +175,10 @@
   width: 100%;
   padding: 0.85rem 1rem;
 
-  background-color: #FFF5F7;
+  background-color: #FFF7F8;
   color: #3D2B3A;
 
-  border: 1.5px solid #F5D5E0;
+  border: 1.5px solid #F2D6DE;
   border-radius: 12px;
 
   font-size: 0.92rem;
@@ -194,7 +194,7 @@
 
 /* Flecha personalizada para selects */
 .fv-input-wrap select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF6B9D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9956B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 16px;
@@ -206,18 +206,18 @@
 .fv-input-wrap select:hover,
 .fv-input-wrap input[type="number"]:hover,
 .fv-input-wrap input[type="date"]:hover {
-  border-color: #FF85B1;
+  border-color: #F9A8BC;
   background-color: #FFFFFF;
-  box-shadow: 0 2px 8px rgba(255, 107, 157, 0.08);
+  box-shadow: 0 2px 8px rgba(244, 133, 158, 0.07);
 }
 
 /* Focus */
 .fv-input-wrap select:focus,
 .fv-input-wrap input[type="number"]:focus,
 .fv-input-wrap input[type="date"]:focus {
-  border-color: #FF6B9D;
+  border-color: #F4859E;
   background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(255, 107, 157, 0.15), 0 2px 8px rgba(255, 107, 157, 0.10);
+  box-shadow: 0 0 0 3px rgba(244, 133, 158, 0.12), 0 2px 8px rgba(244, 133, 158, 0.08);
 }
 
 /* Placeholder */
@@ -232,7 +232,7 @@
   margin-top: 0.5rem;
   padding: 1rem 1.5rem;
 
-  background: linear-gradient(135deg, #FF6B9D 0%, #C56CFF 50%, #7EC8E3 100%);
+  background: linear-gradient(135deg, #F4859E 0%, #E0BFA8 50%, #C9956B 100%);
   background-size: 200% 200%;
   color: #FFFFFF;
 
@@ -247,12 +247,12 @@
 
   cursor: pointer;
   transition: all 0.35s ease;
-  box-shadow: 0 4px 20px rgba(255, 107, 157, 0.30);
+  box-shadow: 0 4px 18px rgba(201, 149, 107, 0.28);
   position: relative;
   overflow: hidden;
 }
 
-/* Efecto de brillo en hover */
+/* Efecto shimmer en hover */
 .fv-btn-submit::before {
   content: '';
   position: absolute;
@@ -260,7 +260,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
   transition: left 0.5s ease;
 }
 
@@ -272,17 +272,17 @@
   background-position: 100% 100%;
   transform: translateY(-2px);
   box-shadow:
-    0 8px 32px rgba(255, 107, 157, 0.35),
-    0 0 20px rgba(197, 108, 255, 0.20);
+    0 8px 28px rgba(201, 149, 107, 0.32),
+    0 0 12px rgba(244, 133, 158, 0.15);
 }
 
 .fv-btn-submit:active {
   transform: translateY(0);
-  box-shadow: 0 4px 16px rgba(255, 107, 157, 0.25);
+  box-shadow: 0 4px 16px rgba(201, 149, 107, 0.22);
 }
 
 .fv-btn-submit:focus-visible {
-  outline: 2px solid #FF6B9D;
+  outline: 2px solid #C9956B;
   outline-offset: 2px;
 }
 

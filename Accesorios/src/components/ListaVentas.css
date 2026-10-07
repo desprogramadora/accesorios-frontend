@@ -1,27 +1,27 @@
 /* ============================
    ListaVentas.css — Card Grid Edition
-   Paleta Rosa + Celeste + Nude + Neón
+   Paleta Rosa + Rose Gold + Celeste + Lavanda
    ============================ */
 
 :root {
-  --color-fondo:        #FFF5F7;
+  --color-fondo:        #FFF7F8;
   --color-superficie:   #FFFFFF;
-  --color-crema:        #FFF0F5;
+  --color-crema:        #FFF0F3;
   --color-crema-oscura: #FFE4EC;
-  --color-borde:        #F5D5E0;
+  --color-borde:        #F2D6DE;
   --color-texto:        #3D2B3A;
   --color-texto-suave:  #9B8A96;
-  --color-acento:       #FF6B9D;
-  --color-acento-hover: #E85A8A;
-  --color-dorado:       #C56CFF;
-  --color-dorado-oscuro:#A855E6;
-  --color-peligro:      #FF6B6B;
-  --color-peligro-hover:#E55555;
-  --color-badge:        #7EC8E3;
+  --color-acento:       #F4859E;
+  --color-acento-hover: #E0758E;
+  --color-dorado:       #C9956B;
+  --color-dorado-oscuro:#B0825D;
+  --color-peligro:      #E87070;
+  --color-peligro-hover:#D45A5A;
+  --color-badge:        #A8D8EA;
 
-  --sombra-suave:  0 2px 12px rgba(255, 107, 157, 0.06);
-  --sombra-media:  0 8px 32px rgba(255, 107, 157, 0.08);
-  --sombra-hover:  0 16px 44px rgba(255, 107, 157, 0.16);
+  --sombra-suave:  0 2px 12px rgba(244, 133, 158, 0.06);
+  --sombra-media:  0 8px 32px rgba(201, 149, 107, 0.07);
+  --sombra-hover:  0 16px 44px rgba(244, 133, 158, 0.13);
   --radio:         16px;
   --radio-sm:      10px;
   --transicion:    all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -36,11 +36,11 @@
   padding: 2.5rem 2.25rem;
 
   background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(245, 213, 224, 0.6);
+  border: 1px solid rgba(242, 214, 222, 0.6);
   border-radius: 24px;
   box-shadow:
     var(--sombra-media),
-    0 0 0 1px rgba(255, 107, 157, 0.04);
+    0 0 0 1px rgba(201, 149, 107, 0.04);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
@@ -60,7 +60,7 @@
   padding-bottom: 1.5rem;
   margin-bottom: 2rem;
   border-bottom: 2px solid transparent;
-  border-image: linear-gradient(90deg, #FF6B9D, #C56CFF, #7EC8E3, transparent) 1;
+  border-image: linear-gradient(90deg, #F4859E, #C9956B, #A8D8EA, transparent) 1;
 }
 
 .lista-ventas-titulo {
@@ -73,13 +73,13 @@
   position: relative;
 }
 
-/* Subrayado decorativo rosa→celeste */
+/* Subrayado decorativo rosa→rose gold */
 .lista-ventas-titulo::after {
   content: '';
   display: block;
   width: 50px;
   height: 3px;
-  background: linear-gradient(90deg, #FF6B9D, #7EC8E3);
+  background: linear-gradient(90deg, #F4859E, #C9956B);
   border-radius: 2px;
   margin-top: 0.5rem;
 }
@@ -90,11 +90,11 @@
   color: #FFFFFF;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #FF6B9D, #C56CFF);
+  background: linear-gradient(135deg, #F4859E, #C9956B);
   padding: 0.35rem 0.9rem;
   border-radius: 100px;
   border: none;
-  box-shadow: 0 2px 10px rgba(255, 107, 157, 0.25);
+  box-shadow: 0 2px 10px rgba(201, 149, 107, 0.22);
 }
 
 /* ============================
@@ -145,7 +145,7 @@
   position: relative;
 }
 
-/* Borde superior decorativo rosa→celeste */
+/* Borde superior decorativo rosa→rose gold */
 .venta-card::before {
   content: '';
   position: absolute;
@@ -153,7 +153,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #FF6B9D, #C56CFF, #7EC8E3);
+  background: linear-gradient(90deg, #F4859E, #E0BFA8, #C9956B);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 3;
@@ -162,7 +162,7 @@
 .venta-card:hover {
   transform: translateY(-6px);
   box-shadow: var(--sombra-hover);
-  border-color: rgba(255, 107, 157, 0.25);
+  border-color: rgba(244, 133, 158, 0.20);
 }
 
 .venta-card:hover::before {
@@ -174,7 +174,7 @@
    ============================ */
 .venta-card-imagen {
   position: relative;
-  background: linear-gradient(135deg, #FFF0F5 0%, #FFE4EC 50%, #E8F4FD 100%);
+  background: linear-gradient(135deg, #FFF0F3 0%, #FFE4EC 50%, #FFF5EB 100%);
   height: 170px;
   display: flex;
   align-items: center;
@@ -196,7 +196,7 @@
   transform: scale(1.08);
 }
 
-/* Overlay degradado inferior con tinte suave rosa */
+/* Overlay degradado inferior suave */
 .venta-card-imagen::after {
   content: '';
   position: absolute;
@@ -204,8 +204,8 @@
   background: linear-gradient(
     to bottom,
     transparent 30%,
-    rgba(255, 107, 157, 0.06) 70%,
-    rgba(255, 240, 245, 0.30) 100%
+    rgba(244, 133, 158, 0.04) 70%,
+    rgba(255, 240, 243, 0.25) 100%
   );
   pointer-events: none;
 }
@@ -214,7 +214,7 @@
 .venta-card-emoji {
   font-size: 3rem;
   line-height: 1;
-  filter: drop-shadow(0 4px 8px rgba(255, 107, 157, 0.2));
+  filter: drop-shadow(0 4px 8px rgba(201, 149, 107, 0.18));
 }
 
 /* Badge de fecha */
@@ -223,7 +223,7 @@
   top: 10px;
   right: 10px;
   z-index: 2;
-  background: linear-gradient(135deg, rgba(255, 107, 157, 0.88), rgba(197, 108, 255, 0.88));
+  background: linear-gradient(135deg, rgba(244, 133, 158, 0.88), rgba(201, 149, 107, 0.88));
   color: #FFFFFF;
   font-size: 0.7rem;
   font-weight: 600;
@@ -233,7 +233,7 @@
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 2px 10px rgba(255, 107, 157, 0.25);
+  box-shadow: 0 2px 10px rgba(201, 149, 107, 0.20);
 }
 
 /* ============================
@@ -304,16 +304,16 @@
 
 /* Total destacado */
 .venta-detalle-total {
-  background: linear-gradient(135deg, rgba(255, 107, 157, 0.08), rgba(197, 108, 255, 0.06));
+  background: linear-gradient(135deg, rgba(201, 149, 107, 0.08), rgba(244, 133, 158, 0.06));
   border-radius: var(--radio-sm);
   padding: 0.4rem 0.3rem;
-  border: 1px solid rgba(255, 107, 157, 0.12);
+  border: 1px solid rgba(201, 149, 107, 0.12);
 }
 
 .venta-total {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-acento);
+  color: var(--color-dorado);
   font-variant-numeric: tabular-nums;
 }
 
@@ -342,32 +342,32 @@
   text-align: center;
 }
 
-/* Editar — contorno celeste */
+/* Editar — contorno rose gold */
 .btn-editar {
   background-color: transparent;
-  color: #7EC8E3;
-  border-color: #7EC8E3;
+  color: var(--color-dorado);
+  border-color: var(--color-dorado);
 }
 
 .btn-editar:hover {
-  background: linear-gradient(135deg, #7EC8E3, #5BB8D9);
+  background: linear-gradient(135deg, #C9956B, #B0825D);
   color: #FFFFFF;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(126, 200, 227, 0.30);
+  box-shadow: 0 4px 14px rgba(201, 149, 107, 0.28);
 }
 
-/* Eliminar — contorno rosa/rojo suave */
+/* Eliminar — contorno rosa suave */
 .btn-eliminar {
   background-color: transparent;
-  color: #FF6B6B;
-  border-color: #FF6B6B;
+  color: var(--color-peligro);
+  border-color: var(--color-peligro);
 }
 
 .btn-eliminar:hover {
-  background: linear-gradient(135deg, #FF6B6B, #E55555);
+  background: linear-gradient(135deg, #E87070, #D45A5A);
   color: #FFFFFF;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(255, 107, 107, 0.30);
+  box-shadow: 0 4px 14px rgba(232, 112, 112, 0.25);
 }
 
 /* Focus accesible */
@@ -414,13 +414,11 @@
    SHIMMER SKELETON — Loading state
    ==================================================== */
 
-/* Animación del brillo que recorre el skeleton */
 @keyframes shimmer {
   0%   { background-position: -600px 0; }
   100% { background-position:  600px 0; }
 }
 
-/* Mixin reutilizable para cualquier elemento skeleton */
 .skeleton-card .skeleton-imagen,
 .skeleton-card .skeleton-line,
 .skeleton-card .skeleton-bloque,
@@ -428,7 +426,7 @@
   background: linear-gradient(
     90deg,
     #FFE4EC 25%,
-    #FFF5F7 50%,
+    #FFF7F8 50%,
     #FFE4EC 75%
   );
   background-size: 600px 100%;
@@ -436,20 +434,17 @@
   border-radius: 8px;
 }
 
-/* Tarjeta skeleton — misma estructura visual que la real */
 .skeleton-card {
   pointer-events: none;
   user-select: none;
 }
 
-/* Zona superior: reemplaza la foto */
 .skeleton-imagen {
   width: 100%;
   height: 170px;
   border-radius: 0;
 }
 
-/* Líneas de texto */
 .skeleton-line {
   height: 14px;
 }
@@ -465,7 +460,6 @@
   height: 13px;
 }
 
-/* Bloques de detalles (cantidad / precio / total) */
 .skeleton-detalles {
   border-top: 1px solid var(--color-borde) !important;
   display: grid;
@@ -484,20 +478,18 @@
   background: linear-gradient(
     90deg,
     #F5D0C5 25%,
-    #FFF0F5 50%,
+    #FFF5EB 50%,
     #F5D0C5 75%
   ) !important;
   background-size: 600px 100% !important;
   animation: shimmer 1.6s ease-in-out infinite !important;
 }
 
-/* Botones skeleton */
 .skeleton-btn {
   height: 38px;
   border-radius: var(--radio-sm);
 }
 
-/* Delay escalonado — cascada de onda entre las 6 tarjetas */
 .ventas-grid > .skeleton-card:nth-child(1) * { animation-delay: 0.00s; }
 .ventas-grid > .skeleton-card:nth-child(2) * { animation-delay: 0.12s; }
 .ventas-grid > .skeleton-card:nth-child(3) * { animation-delay: 0.24s; }
@@ -505,7 +497,6 @@
 .ventas-grid > .skeleton-card:nth-child(5) * { animation-delay: 0.48s; }
 .ventas-grid > .skeleton-card:nth-child(6) * { animation-delay: 0.60s; }
 
-/* Fade-in suave al aparecer las tarjetas reales */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0);    }
@@ -528,7 +519,6 @@
 .ventas-grid > .venta-card:nth-child(11) { animation-delay: 0.60s; }
 .ventas-grid > .venta-card:nth-child(12) { animation-delay: 0.66s; }
 
-/* Respeta preferencias de movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
   .skeleton-card .skeleton-imagen,
   .skeleton-card .skeleton-line,
