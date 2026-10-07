@@ -1,6 +1,6 @@
 /* ============================
    EditarVenta.css — Modal Overlay Elegante
-   Paleta Nude
+   Paleta Nude + Rojo Vino
    ============================ */
 
 /* ============================
@@ -9,9 +9,9 @@
 .editar-overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(43, 35, 28, 0.45);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background-color: rgba(26, 17, 24, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,18 +30,20 @@
    ============================ */
 .editar-modal {
   width: 100%;
-  max-width: 460px;
+  max-width: 480px;
   background-color: #FFFFFF;
-  border: 1px solid #E5E0D8;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(229, 224, 216, 0.6);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 80px rgba(114, 47, 55, 0.15),
+    0 8px 24px rgba(0, 0, 0, 0.12);
   overflow: hidden;
-  animation: slideUp 0.25s ease;
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes slideUp {
-  from { transform: translateY(16px); opacity: 0; }
-  to   { transform: translateY(0);    opacity: 1; }
+  from { transform: translateY(20px) scale(0.98); opacity: 0; }
+  to   { transform: translateY(0) scale(1);       opacity: 1; }
 }
 
 /* ============================
@@ -52,8 +54,20 @@
   align-items: center;
   justify-content: space-between;
   padding: 1.25rem 1.5rem 1rem;
-  border-bottom: 1px solid #E5E0D8;
-  background-color: #F0EBE3;
+  border-bottom: none;
+  background: linear-gradient(135deg, #722F37 0%, #5A252C 50%, #3a1a25 100%);
+  position: relative;
+}
+
+/* Línea dorada debajo */
+.editar-modal-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.4), transparent);
 }
 
 .editar-modal-titulo {
@@ -61,30 +75,34 @@
   font-family: 'Playfair Display', 'Georgia', serif;
   font-size: 1.15rem;
   font-weight: 600;
-  color: #2B2B2B;
+  color: #FAF8F5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .editar-cerrar {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1px solid #E5E0D8;
-  background-color: #FFFFFF;
-  color: #7A7570;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(250, 248, 245, 0.8);
   font-size: 1.3rem;
   line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
   padding: 0;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .editar-cerrar:hover {
-  background-color: #B85C4A;
-  border-color: #B85C4A;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
   color: #FFFFFF;
+  transform: rotate(90deg);
 }
 
 /* ============================
@@ -105,11 +123,11 @@
 }
 
 .editar-campo label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #7A7570;
+  color: #722F37;
 }
 
 /* Inputs y selects */
@@ -120,18 +138,18 @@
   padding: 0.8rem 1rem;
   background-color: #FAF8F5;
   color: #2B2B2B;
-  border: 1px solid #E5E0D8;
-  border-radius: 10px;
+  border: 1.5px solid #E5E0D8;
+  border-radius: 12px;
   font-size: 0.92rem;
   font-family: inherit;
-  transition: all 0.22s ease;
+  transition: all 0.28s ease;
   outline: none;
   appearance: none;
   -webkit-appearance: none;
 }
 
 .editar-form select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23722F37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 15px;
@@ -141,15 +159,16 @@
 
 .editar-form select:hover,
 .editar-form input:hover {
-  border-color: #A68A64;
+  border-color: #722F37;
   background-color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(114, 47, 55, 0.06);
 }
 
 .editar-form select:focus,
 .editar-form input:focus {
-  border-color: #A68A64;
+  border-color: #722F37;
   background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(166, 138, 100, 0.15);
+  box-shadow: 0 0 0 3px rgba(114, 47, 55, 0.1), 0 2px 8px rgba(114, 47, 55, 0.06);
 }
 
 /* ============================
@@ -165,13 +184,13 @@
 .editar-btn-cancelar,
 .editar-btn-guardar {
   padding: 0.85rem 1rem;
-  border-radius: 10px;
+  border-radius: 12px;
   font-family: inherit;
   font-size: 0.88rem;
   font-weight: 600;
   letter-spacing: 0.03em;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.28s ease;
   border: 1.5px solid transparent;
 }
 
@@ -183,21 +202,40 @@
 
 .editar-btn-cancelar:hover {
   background-color: #F0EBE3;
-  border-color: #C9B49A;
+  border-color: #C9A96E;
   color: #2B2B2B;
 }
 
 .editar-btn-guardar {
-  background-color: #A68A64;
-  color: #FFFFFF;
-  border-color: #A68A64;
+  background: linear-gradient(135deg, #722F37 0%, #8B3A42 50%, #722F37 100%);
+  background-size: 200% 200%;
+  color: #FAF8F5;
+  border-color: transparent;
+  box-shadow: 0 2px 10px rgba(114, 47, 55, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto brillo */
+.editar-btn-guardar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+  transition: left 0.5s ease;
+}
+
+.editar-btn-guardar:hover::before {
+  left: 100%;
 }
 
 .editar-btn-guardar:hover {
-  background-color: #8B7355;
-  border-color: #8B7355;
+  background-position: 100% 100%;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(166, 138, 100, 0.30);
+  box-shadow: 0 6px 20px rgba(114, 47, 55, 0.30);
 }
 
 .editar-btn-guardar:active {
@@ -207,7 +245,7 @@
 
 .editar-btn-cancelar:focus-visible,
 .editar-btn-guardar:focus-visible {
-  outline: 2px solid #A68A64;
+  outline: 2px solid #722F37;
   outline-offset: 2px;
 }
 
@@ -216,7 +254,7 @@
    ============================ */
 @media (max-width: 480px) {
   .editar-modal {
-    border-radius: 16px;
+    border-radius: 20px;
   }
   .editar-form {
     padding: 1.25rem;

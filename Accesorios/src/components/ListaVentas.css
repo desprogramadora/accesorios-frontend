@@ -1,42 +1,48 @@
 /* ============================
    ListaVentas.css — Card Grid Edition
-   Paleta Nude Elegante
+   Paleta Nude + Rojo Vino Elegante
    ============================ */
 
 :root {
-  --color-fondo:        #FAF8F5;
+  --color-fondo:        #1a1118;
   --color-superficie:   #FFFFFF;
   --color-crema:        #F0EBE3;
   --color-crema-oscura: #E8DDD2;
   --color-borde:        #E5E0D8;
   --color-texto:        #2B2B2B;
   --color-texto-suave:  #7A7570;
-  --color-acento:       #A68A64;
-  --color-acento-hover: #8B7355;
+  --color-acento:       #722F37;
+  --color-acento-hover: #5A252C;
+  --color-dorado:       #C9A96E;
+  --color-dorado-oscuro:#A68A64;
   --color-peligro:      #B85C4A;
   --color-peligro-hover:#9C4A3A;
-  --color-badge:        #C9B49A;
+  --color-badge:        #C9A96E;
 
-  --sombra-suave:  0 2px 8px rgba(0, 0, 0, 0.05);
-  --sombra-media:  0 8px 28px rgba(0, 0, 0, 0.09);
-  --sombra-hover:  0 14px 36px rgba(0, 0, 0, 0.13);
-  --radio:         14px;
-  --radio-sm:      8px;
-  --transicion:    all 0.28s ease;
+  --sombra-suave:  0 2px 12px rgba(0, 0, 0, 0.06);
+  --sombra-media:  0 8px 32px rgba(0, 0, 0, 0.10);
+  --sombra-hover:  0 16px 44px rgba(114, 47, 55, 0.14);
+  --radio:         16px;
+  --radio-sm:      10px;
+  --transicion:    all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================
    Contenedor principal
    ============================ */
 .lista-ventas-container {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 2.5rem auto 4rem;
-  padding: 2.25rem 2rem;
+  padding: 2.5rem 2.25rem;
 
-  background-color: var(--color-superficie);
-  border: 1px solid var(--color-borde);
-  border-radius: 20px;
-  box-shadow: var(--sombra-media);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(229, 224, 216, 0.6);
+  border-radius: 24px;
+  box-shadow:
+    var(--sombra-media),
+    0 0 0 1px rgba(201, 169, 110, 0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
   font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
   color: var(--color-texto);
@@ -47,34 +53,48 @@
    ============================ */
 .lista-ventas-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.5rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid var(--color-borde);
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, var(--color-acento), var(--color-dorado), transparent) 1;
 }
 
 .lista-ventas-titulo {
   margin: 0;
   font-family: 'Playfair Display', 'Georgia', serif;
-  font-size: 1.7rem;
-  font-weight: 600;
+  font-size: 1.75rem;
+  font-weight: 700;
   letter-spacing: 0.01em;
   color: var(--color-texto);
+  position: relative;
+}
+
+/* Subrayado vino decorativo */
+.lista-ventas-titulo::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-acento), var(--color-dorado));
+  border-radius: 2px;
+  margin-top: 0.5rem;
 }
 
 .lista-ventas-count {
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--color-texto-suave);
-  letter-spacing: 0.06em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #FAF8F5;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
-  background-color: var(--color-crema);
-  padding: 0.3rem 0.8rem;
+  background: linear-gradient(135deg, var(--color-acento), var(--color-acento-hover));
+  padding: 0.35rem 0.9rem;
   border-radius: 100px;
-  border: 1px solid var(--color-borde);
+  border: none;
+  box-shadow: 0 2px 8px rgba(114, 47, 55, 0.2);
 }
 
 /* ============================
@@ -104,7 +124,7 @@
    ============================ */
 .ventas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -122,12 +142,31 @@
 
   overflow: hidden;
   transition: var(--transicion);
+  position: relative;
+}
+
+/* Borde superior decorativo rojo vino */
+.venta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-acento), var(--color-dorado), var(--color-acento));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
 }
 
 .venta-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   box-shadow: var(--sombra-hover);
-  border-color: var(--color-badge);
+  border-color: rgba(114, 47, 55, 0.2);
+}
+
+.venta-card:hover::before {
+  opacity: 1;
 }
 
 /* ============================
@@ -136,7 +175,7 @@
 .venta-card-imagen {
   position: relative;
   background: linear-gradient(135deg, var(--color-crema) 0%, var(--color-crema-oscura) 100%);
-  height: 160px;
+  height: 170px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,22 +189,23 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  transition: transform 0.45s ease;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .venta-card:hover .venta-card-img {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
-/* Overlay degradado inferior para legibilidad del badge */
+/* Overlay degradado inferior con tinte vino */
 .venta-card-imagen::after {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
-    transparent 40%,
-    rgba(43, 35, 28, 0.18) 100%
+    transparent 30%,
+    rgba(114, 47, 55, 0.12) 70%,
+    rgba(43, 35, 28, 0.25) 100%
   );
   pointer-events: none;
 }
@@ -174,7 +214,7 @@
 .venta-card-emoji {
   font-size: 3rem;
   line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.10));
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
 }
 
 /* Badge de fecha */
@@ -183,16 +223,17 @@
   top: 10px;
   right: 10px;
   z-index: 2;
-  background-color: rgba(255, 255, 255, 0.90);
-  color: var(--color-texto-suave);
-  font-size: 0.72rem;
+  background: linear-gradient(135deg, rgba(114, 47, 55, 0.85), rgba(90, 37, 44, 0.90));
+  color: #FAF8F5;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.04em;
-  padding: 0.25rem 0.65rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 100px;
-  border: 1px solid var(--color-borde);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(201, 169, 110, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 /* ============================
@@ -227,11 +268,11 @@
 /* Etiquetas pequeñas */
 .venta-label {
   display: block;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-texto-suave);
+  color: var(--color-acento);
   margin-bottom: 0.1rem;
 }
 
@@ -263,9 +304,10 @@
 
 /* Total destacado */
 .venta-detalle-total {
-  background-color: var(--color-crema);
+  background: linear-gradient(135deg, rgba(114, 47, 55, 0.08), rgba(114, 47, 55, 0.04));
   border-radius: var(--radio-sm);
   padding: 0.4rem 0.3rem;
+  border: 1px solid rgba(114, 47, 55, 0.1);
 }
 
 .venta-total {
@@ -300,7 +342,7 @@
   text-align: center;
 }
 
-/* Editar — contorno nude */
+/* Editar — contorno vino */
 .btn-editar {
   background-color: transparent;
   color: var(--color-acento);
@@ -308,10 +350,10 @@
 }
 
 .btn-editar:hover {
-  background-color: var(--color-acento);
+  background: linear-gradient(135deg, var(--color-acento), var(--color-acento-hover));
   color: #FFFFFF;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(166, 138, 100, 0.25);
+  box-shadow: 0 4px 14px rgba(114, 47, 55, 0.25);
 }
 
 /* Eliminar — contorno suave peligro */
@@ -322,10 +364,10 @@
 }
 
 .btn-eliminar:hover {
-  background-color: var(--color-peligro);
+  background: linear-gradient(135deg, var(--color-peligro), var(--color-peligro-hover));
   color: #FFFFFF;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(184, 92, 74, 0.22);
+  box-shadow: 0 4px 14px rgba(184, 92, 74, 0.25);
 }
 
 /* Focus accesible */
@@ -342,6 +384,7 @@
   .lista-ventas-container {
     margin: 1.5rem 1rem 3rem;
     padding: 1.75rem 1.5rem;
+    border-radius: 20px;
   }
   .ventas-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -363,7 +406,7 @@
     gap: 1rem;
   }
   .venta-card-imagen {
-    height: 100px;
+    height: 120px;
   }
 }
 
@@ -402,7 +445,7 @@
 /* Zona superior: reemplaza la foto */
 .skeleton-imagen {
   width: 100%;
-  height: 160px;
+  height: 170px;
   border-radius: 0;
 }
 
@@ -464,12 +507,12 @@
 
 /* Fade-in suave al aparecer las tarjetas reales */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(12px); }
+  from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0);    }
 }
 
 .venta-card {
-  animation: fadeInUp 0.35s ease both;
+  animation: fadeInUp 0.4s ease both;
 }
 
 .ventas-grid > .venta-card:nth-child(1)  { animation-delay: 0.00s; }

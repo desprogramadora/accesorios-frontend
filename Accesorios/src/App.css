@@ -1,6 +1,6 @@
 /* ============================
    App.css — Layout Global Elegante
-   Paleta Nude
+   Paleta Nude + Rojo Vino
    ============================ */
 
 /* ============================
@@ -10,25 +10,28 @@
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background-color: #FAF8F5;
 }
 
 /* ============================
    Header
    ============================ */
 .app-header {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid #E5E0D8;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(135deg, #1a1118 0%, #2d1520 40%, #3a1a25 70%, #2d1520 100%);
+  border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+  box-shadow:
+    0 2px 20px rgba(0, 0, 0, 0.3),
+    0 1px 0 rgba(201, 169, 110, 0.08);
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .app-header-inner {
-  max-width: 1140px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1.1rem 2rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -37,28 +40,41 @@
 .app-logo {
   font-size: 1.6rem;
   line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(201, 169, 110, 0.4));
 }
 
 .app-titulo {
   margin: 0;
   font-family: 'Playfair Display', 'Georgia', serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
-  color: #2B2B2B;
+  letter-spacing: 0.02em;
+  color: #FAF8F5;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .app-subtitulo {
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #A68A64;
-  background-color: #F0EBE3;
-  padding: 0.25rem 0.75rem;
+  color: var(--color-dorado, #C9A96E);
+  background: linear-gradient(135deg, rgba(114, 47, 55, 0.3), rgba(114, 47, 55, 0.15));
+  padding: 0.3rem 0.9rem;
   border-radius: 100px;
-  border: 1px solid #E5E0D8;
+  border: 1px solid rgba(201, 169, 110, 0.25);
   margin-left: auto;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* Línea decorativa dorada debajo del header */
+.app-header::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-dorado, #C9A96E), transparent);
+  opacity: 0.4;
 }
 
 /* ============================
@@ -76,11 +92,16 @@
    ============================ */
 .app-footer {
   text-align: center;
-  padding: 1.5rem 1rem;
-  font-size: 0.8rem;
-  color: #A8A8A8;
-  border-top: 1px solid #E5E0D8;
-  letter-spacing: 0.04em;
+  padding: 1.75rem 1rem;
+  font-size: 0.78rem;
+  color: rgba(201, 169, 110, 0.5);
+  border-top: 1px solid rgba(201, 169, 110, 0.1);
+  letter-spacing: 0.06em;
+  background: linear-gradient(to top, rgba(26, 17, 24, 0.8), transparent);
+}
+
+.app-footer p {
+  color: inherit;
 }
 
 /* ============================
@@ -92,7 +113,7 @@
     gap: 0.5rem;
   }
   .app-titulo {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
   }
   .app-subtitulo {
     display: none;

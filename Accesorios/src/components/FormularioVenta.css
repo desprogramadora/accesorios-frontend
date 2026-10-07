@@ -1,84 +1,190 @@
 /* ============================
-   FormularioVenta.css — Nude Elegante
+   FormularioVenta.css — Rojo Vino Elegante
    ============================ */
 
 /* ============================
-   Contenedor principal
+   Wrapper / Contenedor principal
    ============================ */
-.formulario-venta-wrapper {
-  max-width: 480px;
+.fv-wrapper {
+  max-width: 580px;
   margin: 2.5rem auto 0;
-  padding: 2.25rem 2rem;
-
-  background-color: #FFFFFF;
-  border: 1px solid #E5E0D8;
-  border-radius: 20px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
-
-  font-family: 'Inter', 'Segoe UI', -apple-system, sans-serif;
-  color: #2B2B2B;
+  padding: 0;
+  position: relative;
 }
 
 /* ============================
-   Título
+   Banner decorativo superior
    ============================ */
-.formulario-venta-titulo {
-  margin: 0 0 1.5rem 0;
-  padding-bottom: 1rem;
+.fv-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #722F37 0%, #5A252C 50%, #3a1a25 100%);
+  border-radius: 20px 20px 0 0;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  border-bottom: none;
+  position: relative;
+  overflow: hidden;
+}
 
+/* Partículas / patrón decorativo */
+.fv-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 50%, rgba(201, 169, 110, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* Línea dorada inferior */
+.fv-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 2rem;
+  right: 2rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 169, 110, 0.4), transparent);
+}
+
+.fv-banner-icono {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+  z-index: 1;
+  animation: floatGem 3s ease-in-out infinite;
+}
+
+@keyframes floatGem {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(3deg); }
+}
+
+.fv-titulo {
+  margin: 0;
   font-family: 'Playfair Display', 'Georgia', serif;
-  font-size: 1.45rem;
-  font-weight: 600;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FAF8F5;
   letter-spacing: 0.01em;
-  color: #2B2B2B;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  z-index: 1;
+}
 
-  border-bottom: 1px solid #E5E0D8;
-  text-align: center;
+.fv-subtitulo {
+  margin: 0.15rem 0 0;
+  font-size: 0.78rem;
+  color: rgba(201, 169, 110, 0.8);
+  letter-spacing: 0.04em;
+  z-index: 1;
 }
 
 /* ============================
-   Formulario
+   Toast de éxito
    ============================ */
-.formulario-venta-form {
+.fv-toast {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  margin: 0.75rem 1.5rem;
+
+  background: linear-gradient(135deg, #2d5a3d, #1e4a2e);
+  color: #c8e6c9;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: 12px;
+
+  font-size: 0.88rem;
+  font-weight: 500;
+
+  animation: toastSlide 0.35s ease;
+  box-shadow: 0 4px 16px rgba(30, 74, 46, 0.3);
+}
+
+.fv-toast-icono {
+  font-size: 1.15rem;
+}
+
+@keyframes toastSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================
+   Formulario (zona blanca glassmorphism)
+   ============================ */
+.fv-form {
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 0 0 20px 20px;
+  border: 1px solid #E5E0D8;
+  border-top: none;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 1px 0 rgba(201, 169, 110, 0.08) inset;
+}
+
+/* ============================
+   Fila doble (2 columnas)
+   ============================ */
+.fv-fila-doble {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-/* Campo con label */
-.formulario-campo {
+/* ============================
+   Campos
+   ============================ */
+.fv-campo {
   display: flex;
   flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fv-campo label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7A7570;
+  display: flex;
+  align-items: center;
   gap: 0.35rem;
 }
 
-.formulario-campo label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #7A7570;
+.fv-campo-icono {
+  font-size: 0.85rem;
 }
 
 /* ============================
-   Selects e inputs
+   Input wrapper + inputs/selects
    ============================ */
-.formulario-venta-form select,
-.formulario-venta-form input[type="number"],
-.formulario-venta-form input[type="date"] {
+.fv-input-wrap {
+  position: relative;
+}
+
+.fv-input-wrap select,
+.fv-input-wrap input[type="number"],
+.fv-input-wrap input[type="date"] {
   width: 100%;
   padding: 0.85rem 1rem;
 
   background-color: #FAF8F5;
   color: #2B2B2B;
 
-  border: 1px solid #E5E0D8;
-  border-radius: 10px;
+  border: 1.5px solid #E5E0D8;
+  border-radius: 12px;
 
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-family: inherit;
 
-  transition: all 0.25s ease;
+  transition: all 0.28s ease;
   outline: none;
 
   appearance: none;
@@ -87,8 +193,8 @@
 }
 
 /* Flecha personalizada para selects */
-.formulario-venta-form select {
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+.fv-input-wrap select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23722F37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   background-size: 16px;
@@ -97,39 +203,41 @@
 }
 
 /* Hover */
-.formulario-venta-form select:hover,
-.formulario-venta-form input[type="number"]:hover,
-.formulario-venta-form input[type="date"]:hover {
-  border-color: #A68A64;
+.fv-input-wrap select:hover,
+.fv-input-wrap input[type="number"]:hover,
+.fv-input-wrap input[type="date"]:hover {
+  border-color: #722F37;
   background-color: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(114, 47, 55, 0.06);
 }
 
 /* Focus */
-.formulario-venta-form select:focus,
-.formulario-venta-form input[type="number"]:focus,
-.formulario-venta-form input[type="date"]:focus {
-  border-color: #A68A64;
+.fv-input-wrap select:focus,
+.fv-input-wrap input[type="number"]:focus,
+.fv-input-wrap input[type="date"]:focus {
+  border-color: #722F37;
   background-color: #FFFFFF;
-  box-shadow: 0 0 0 3px rgba(166, 138, 100, 0.15);
+  box-shadow: 0 0 0 3px rgba(114, 47, 55, 0.12), 0 2px 8px rgba(114, 47, 55, 0.08);
 }
 
 /* Placeholder */
-.formulario-venta-form input::placeholder {
+.fv-input-wrap input::placeholder {
   color: #BCBAB7;
 }
 
 /* ============================
    Botón "Registrar Venta"
    ============================ */
-.formulario-venta-form button[type="submit"] {
-  margin-top: 0.75rem;
-  padding: 0.95rem 1.5rem;
+.fv-btn-submit {
+  margin-top: 0.5rem;
+  padding: 1rem 1.5rem;
 
-  background-color: #A68A64;
-  color: #FFFFFF;
+  background: linear-gradient(135deg, #722F37 0%, #8B3A42 50%, #722F37 100%);
+  background-size: 200% 200%;
+  color: #FAF8F5;
 
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
 
   font-size: 0.92rem;
   font-weight: 700;
@@ -138,43 +246,96 @@
   font-family: inherit;
 
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 8px rgba(166, 138, 100, 0.20);
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 16px rgba(114, 47, 55, 0.30);
+  position: relative;
+  overflow: hidden;
 }
 
-.formulario-venta-form button[type="submit"]:hover {
-  background-color: #8B7355;
+/* Efecto de brillo en hover */
+.fv-btn-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s ease;
+}
+
+.fv-btn-submit:hover::before {
+  left: 100%;
+}
+
+.fv-btn-submit:hover {
+  background-position: 100% 100%;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(166, 138, 100, 0.30);
+  box-shadow: 0 8px 28px rgba(114, 47, 55, 0.40);
 }
 
-.formulario-venta-form button[type="submit"]:active {
+.fv-btn-submit:active {
   transform: translateY(0);
-  box-shadow: 0 2px 8px rgba(166, 138, 100, 0.20);
+  box-shadow: 0 4px 16px rgba(114, 47, 55, 0.30);
 }
 
-.formulario-venta-form button[type="submit"]:focus-visible {
-  outline: 2px solid #A68A64;
+.fv-btn-submit:focus-visible {
+  outline: 2px solid #722F37;
   outline-offset: 2px;
+}
+
+/* Estado loading */
+.fv-btn-loading {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+/* Spinner */
+.fv-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(250, 248, 245, 0.3);
+  border-top-color: #FAF8F5;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 /* ============================
    Responsive
    ============================ */
-@media (max-width: 560px) {
-  .formulario-venta-wrapper {
+@media (max-width: 600px) {
+  .fv-wrapper {
     margin: 1rem 0.75rem 0;
+  }
+
+  .fv-banner {
+    padding: 1.25rem 1.25rem;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .fv-titulo {
+    font-size: 1.15rem;
+  }
+
+  .fv-form {
     padding: 1.5rem 1.25rem;
-    border-radius: 16px;
+    border-radius: 0 0 16px 16px;
   }
 
-  .formulario-venta-titulo {
-    font-size: 1.2rem;
+  .fv-fila-doble {
+    grid-template-columns: 1fr;
   }
 
-  .formulario-venta-form select,
-  .formulario-venta-form input[type="number"],
-  .formulario-venta-form input[type="date"] {
+  .fv-input-wrap select,
+  .fv-input-wrap input[type="number"],
+  .fv-input-wrap input[type="date"] {
     padding: 0.75rem 0.9rem;
     font-size: 0.9rem;
   }
